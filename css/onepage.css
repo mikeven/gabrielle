@@ -175,7 +175,7 @@ p.title{
 }
 
 .section-padding{
-	padding-top:130px!important;
+	padding-top:70px!important;
 }
 
 .padding-botom{
@@ -318,7 +318,8 @@ a.readmore:hover, a.readmore:focus{
 .bounce-top,
 .bounce-green,
 .bounce-white, 
-.bounce-pink{
+.bounce-pink,
+.bounce-yellow{
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
@@ -341,8 +342,9 @@ a.readmore:hover, a.readmore:focus{
 	
 }
 .bounce-green:before{
-	background:#82B440;
+	background:#f5d078;
 }
+
 .bounce-white:before{
 	background: #fff;
 }	
