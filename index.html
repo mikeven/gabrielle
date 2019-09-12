@@ -79,6 +79,45 @@
   color: black;
 }
 
+#sobre_pestana {
+
+  background: url(images/s3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 120px;
+  width: 246px;
+  height: 122px;
+  z-index: 65;
+
+}
+
+#sobre_posterior {
+
+  background: url(images/s1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top:120px;
+  width: 246px;
+  height: 246px;
+  z-index: 2;
+
+}
+
+.pabierta{
+  transform:rotateX(0deg);
+  transition-duration: 1s;
+  -webkit-transform:rotateX(0deg);
+  -webkit-transition-duration: 1s;
+}
+.pcerrado{
+  transform:rotateX(180deg);
+  transition-duration: 2s;
+  -webkit-transform:rotateX(180deg);
+  -webkit-transition-duration: 2s;
+}
+
 </style>
 
 
@@ -96,7 +135,7 @@
 
 <section id="main-slider" >
   <div>
-  <video autoplay loop id="myVideo" poster='video/gabrielle_thumb.jpg' 
+  <video autoplay loop id="myVideo" poster='video/gabrielle_thumb_.jpg' 
     width="100%" >
     <source src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
   </video>
@@ -206,12 +245,15 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       
-      <div class="modal-body">
-        
+      <div class="modal-body" style="height: 450px">
+        <div id="sobre_pestana" class="pcerrado"></div>
+        <div id="sobre_posterior"></div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
+
     </div>
   </div>
 </div>
@@ -272,9 +314,10 @@
 <script src="js/jquery.fancybox-media.js"></script>
 <script src="js/jPushMenu.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/TweenMax.min.js"></script>
 <script src="js/universal-parallax.min.js"></script>
 <script type="text/javascript">
-  $("video").prop('muted', true);
+  $("video").prop('muted', false);
 
   $("#mute-video").click( function (){
     if( $("video").prop('muted') ) {
@@ -283,6 +326,12 @@
       $("video").prop('muted', true);
     }
   });
+  $("#sobre_pestana").click( function (){
+    $("#sobre_pestana").css( "top", 0 );
+    $("#sobre_pestana").removeClass("pcerrado");
+    $("#sobre_pestana").addClass("pabierta");
+  });
+
 </script>
 <script>
   new universalParallax().init({
