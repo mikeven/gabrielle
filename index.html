@@ -37,7 +37,6 @@
 
 #main-slider{
   width:100%;
-  
   position: relative;
 }
 
@@ -92,6 +91,18 @@
 
 }
 
+#foto{
+  top: 100px;
+  left:45px;
+  width: 200px;
+  height: 157px;
+  z-index: 3;
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #663300;
+  background: url(images/daisy.jpg);
+  }
+
 #sobre_posterior {
 
   background: url(images/s1.jpg);
@@ -107,9 +118,9 @@
 
 .pabierta{
   transform:rotateX(0deg);
-  transition-duration: 1s;
+  transition-duration: 4s;
   -webkit-transform:rotateX(0deg);
-  -webkit-transition-duration: 1s;
+  -webkit-transition-duration: 4s;
 }
 .pcerrado{
   transform:rotateX(180deg);
@@ -247,6 +258,7 @@
       
       <div class="modal-body" style="height: 450px">
         <div id="sobre_pestana" class="pcerrado"></div>
+        <div id="foto"></div>
         <div id="sobre_posterior"></div>
       </div>
 
@@ -317,15 +329,17 @@
 <script src="js/TweenMax.min.js"></script>
 <script src="js/universal-parallax.min.js"></script>
 <script type="text/javascript">
+
   $("video").prop('muted', false);
 
   $("#mute-video").click( function (){
     if( $("video").prop('muted') ) {
-          $("video").prop('muted', false);
+      $("video").prop('muted', false);
     } else {
       $("video").prop('muted', true);
     }
   });
+
   $("#sobre_pestana").click( function (){
     $("#sobre_pestana").css( "top", 0 );
     $("#sobre_pestana").removeClass("pcerrado");
