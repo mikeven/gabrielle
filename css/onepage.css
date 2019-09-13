@@ -380,7 +380,7 @@ a.readmore:hover, a.readmore:focus{
 }
 .bounce-green:hover, .bounce-green:focus{
    color: #fff;
-   border:1px solid #82B440;
+   border:1px solid #000;
 }
 .bounce-white:hover, .bounce-white:focus{
 	color:#1b1d1f !important;

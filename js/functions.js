@@ -219,6 +219,7 @@ jQuery(function($) {'use strict',
     });
 
 //Parallax effects
+/*
 $('#bg-paralax ').parallax("50%", 0.3);
 $('#testinomial').parallax("50%", 0.2);
 $('.text-rotator').parallax("50%", 0.2);
@@ -233,3 +234,4 @@ $('.text-rotator').parallax("50%", 0.2);
  if(screen.width <720 ){ 
  $('div, img, input, textarea, button, a').removeClass('wow'); // to remove transition
  }
+ */
