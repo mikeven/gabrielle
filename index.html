@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
 <link rel="stylesheet" type="text/css" href="css/zerogrid.css">
 <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
+<link rel="stylesheet" type="text/css" href="css/gabrielle.css">
 <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400%7COpen+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/onepage.css">
 <link rel="stylesheet" type="text/css" href="css/one-color.css">
@@ -92,27 +93,27 @@
 }
 
 #foto{
-  top: 100px;
-  left:45px;
-  width: 200px;
+  top: 130px;
+  left:22px;
+  width: 240px;
   height: 157px;
   z-index: 3;
   position: absolute;
   overflow: hidden;
   border: 1px solid #663300;
   background: url(images/daisy.jpg);
-  }
+}
 
 #sobre_posterior {
 
-  background: url(images/s1.jpg);
+  background: url(images/s1.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   top:120px;
   width: 246px;
   height: 246px;
-  z-index: 2;
+  z-index: 3;
 
 }
 
@@ -146,7 +147,7 @@
 
 <section id="main-slider" >
   <div>
-  <video autoplay loop id="myVideo" poster='video/gabrielle_thumb_.jpg' 
+  <video autoplay loop id="myVideo" poster='video/gabrielle_thumb.jpg' 
     width="100%" >
     <source src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
   </video>
@@ -256,10 +257,14 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       
-      <div class="modal-body" style="height: 450px">
-        <div id="sobre_pestana" class="pcerrado"></div>
-        <div id="foto"></div>
-        <div id="sobre_posterior"></div>
+      <div class="modal-body" style="height: 500px" align="center">
+        <div class="envelope">
+          <input class="envelope__check" type="checkbox"/>
+          <div class="envelope__flap envelope__flap--inside"></div>
+          <div class="envelope__flap"></div>
+          
+          <div class="envelope__back"></div>
+        </div>
       </div>
 
       <div class="modal-footer">
@@ -330,7 +335,7 @@
 <script src="js/universal-parallax.min.js"></script>
 <script type="text/javascript">
 
-  $("video").prop('muted', false);
+  $("video").prop('muted', true);
 
   $("#mute-video").click( function (){
     if( $("video").prop('muted') ) {
