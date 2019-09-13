@@ -254,15 +254,26 @@
 
 <!-- Modal -->
 <div class="modal bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+  <div id="mygab" class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       
       <div class="modal-body" style="height: 500px" align="center">
-        <div class="envelope">
-          <input class="envelope__check" type="checkbox"/>
+        <div class="envelope" style="margin-top: 150px;">
+          <input id="openenv" class="envelope__check" type="checkbox"/>
           <div class="envelope__flap envelope__flap--inside"></div>
           <div class="envelope__flap"></div>
-          
+          <div class="envelope__letter">
+            <div class="letter">
+              <div class="letter__content">
+                <p>Hey! 👋</p>
+                <p>A</p>
+              </div>
+              <div class="letter__content"></div>
+              <div class="letter__content">
+                <p>B. ☕️</p><span class="sign-off">Joe Fox</span>
+              </div>
+            </div>
+          </div>
           <div class="envelope__back"></div>
         </div>
       </div>
@@ -330,8 +341,8 @@
 <script src="js/jquery.fancybox-thumbs.js"></script>
 <script src="js/jquery.fancybox-media.js"></script>
 <script src="js/jPushMenu.js"></script>
-<script src="js/functions.js"></script>
-<script src="js/TweenMax.min.js"></script>
+ <script src="js/functions.js"></script>
+<!--<script src="js/TweenMax.min.js"></script>-->
 <script src="js/universal-parallax.min.js"></script>
 <script type="text/javascript">
 
@@ -345,10 +356,8 @@
     }
   });
 
-  $("#sobre_pestana").click( function (){
-    $("#sobre_pestana").css( "top", 0 );
-    $("#sobre_pestana").removeClass("pcerrado");
-    $("#sobre_pestana").addClass("pabierta");
+  $('#exampleModal').on('show.bs.modal', function() {
+    //$("#openenv").click();
   });
 
 </script>
