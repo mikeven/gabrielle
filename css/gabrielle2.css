@@ -85,8 +85,7 @@ html,body {
   z-index:1;
 }
 
-.container{ background: #FFF; }
-.section{ padding: 70px 0; }
+.section{ padding: 70px 0; background: #FFF; }
 
 #content p {
   font-size:1.25rem;

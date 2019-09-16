@@ -27,7 +27,18 @@
     <link rel="stylesheet" href="css/universal-parallax.min.css">
 
 <style type="text/css">
-    
+    #foto{
+        top: 20px;
+        left: 50px;
+        width: 200px;
+        height: 238px;
+        z-index: 2;
+        position: absolute;
+        overflow: hidden;
+        background: url( images/frame.jpg );
+        background-size: cover;
+    }
+    .codeinput{ padding: 25px; border:1px solid #000; }
 </style>
 
 <script src="js/jquery-2.1.4.js"></script> 
@@ -125,7 +136,7 @@
         <img id="hero-pic" class="hidden-desktop" src="video/gabrielle_thumb.jpg" alt="">-->
     </div>
 
-    <div id="content" class="section" style="background-color:#FFF;">
+    <div id="content" class="section">
         <div class="row">
           <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
             <h4>#GABRIELLECHANEL</h4>
@@ -143,21 +154,17 @@
                 data-wow-duration="500ms" data-wow-delay="300ms">
                 <form class="form-inline" id="contact-form" onSubmit="return false">
               
-              
-                    <div class="row">
-                        <label>ENTER CODE</label>
-                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                          <input type="text" class="form-control codeinput" name="code" id="code" >
-                        </div>
-                    
-                        <div class="col-xs-12 col-md-12" style="padding: 15px">
-                          
-                          <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Send</button>
-                        </div>
+                    <label>ENTER CODE</label>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                      <input type="text" class="form-control codeinput" name="code" id="code" >
+                    </div>
+                
+                    <div class="col-xs-12 col-md-12" style="padding: 15px">
+                      
+                      <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Send</button>
                     </div>
             
                 </form>
-              
             </div>
         </div>
     </div>
@@ -186,7 +193,7 @@
       </div>
     </div>
 
-    <div class="section container">
+    <div class="section">
     
         <div class="row">
           <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
