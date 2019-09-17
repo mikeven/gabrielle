@@ -58,8 +58,11 @@ $(document).ready(function () {
 
     $(".envelope").click( function (){
         if( $("#stenv").val() == "closed" ){
+            /*TweenMax.staggerTo( ".envelope__flap", 3, 
+            { rotationX:320, delay:8, onComplete:envOut, ease:Back.easeIn}, 1.5 );*/
             TweenMax.staggerTo( "#foto", 3, 
             { y:-250, delay:8, onComplete:envOut, ease:Back.easeIn}, 1.5 );
+
         }
         if( $("#stenv").val() == "open" ){
             TweenMax.staggerTo( "#foto", 2, 

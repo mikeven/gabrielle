@@ -14,8 +14,6 @@
 <link rel="stylesheet" type="text/css" href="css/zerogrid.css">
 <link rel="stylesheet" type="text/css" href="css/jPushMenu.css">
 <link rel="stylesheet" type="text/css" href="css/gabrielle.css">
-<link rel="stylesheet" type="text/css" href="css/all.css">
-
 <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400%7COpen+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/onepage.css">
 <link rel="stylesheet" type="text/css" href="css/one-color.css">
@@ -81,16 +79,55 @@
   color: black;
 }
 
+#sobre_pestana {
+
+  background: url(images/s3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 120px;
+  width: 246px;
+  height: 122px;
+  z-index: 65;
+
+}
+
 #foto{
   top: 20px;
-  left: 50px;
-  width: 200px;
-  height: 238px;
+  left: 6%;
+  width: 260px;
+  height: 260px;
   z-index: 2;
   position: absolute;
   overflow: hidden;
-  background: url( images/frame.jpg );
+  background: url(images/frame.jpg);
   background-size: cover;
+}
+
+#sobre_posterior {
+
+  background: url(images/s1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top:120px;
+  width: 246px;
+  height: 246px;
+  z-index: 3;
+
+}
+
+.pabierta{
+  transform:rotateX(0deg);
+  transition-duration: 4s;
+  -webkit-transform:rotateX(0deg);
+  -webkit-transition-duration: 4s;
+}
+.pcerrado{
+  transform:rotateX(180deg);
+  transition-duration: 2s;
+  -webkit-transform:rotateX(180deg);
+  -webkit-transition-duration: 2s;
 }
 
 </style>
@@ -108,11 +145,11 @@
 </div>
 
 
-<section id="main-slider">
+<section id="main-slider" >
   <div>
-  <video autoplay loop id="myVideo" poster='video/gabrielle_thumb.jpg' 
-    width="100%" muted>
-    <source id="gabvid" src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+  <video autoplay loop id="myVideo" poster='video/gabrielle_thumb_.jpg' 
+    width="100%" >
+    <source src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
   </video>
 
   <!-- Optional: some overlay text to describe the video -->
@@ -165,9 +202,8 @@
          data-endelementdelay="0.1"
          style="z-index: 5;">DÉCOUVRIR. 
         </p>
-        <div align="center">
-          <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-up"></i>  </a>
-        </div>
+        <div align="center" sty><a id="mute-video" href="#!">M</a></div>
+        
       
     </div>
   </div>
@@ -176,7 +212,7 @@
 
 
 <!--What We Offer-->
-<section id="about" style="padding-top: 180px">
+<section class="s" id="about" style="padding-top: 180px">
   <div class="container">
     
     <div class="row">
@@ -221,7 +257,7 @@
   <div id="mygab" class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       
-      <div class="modal-body" style="height: 550px" align="center">
+      <div class="modal-body" style="height: 500px" align="center">
         <div class="envelope" style="margin-top: 150px;">
           <input id="openenv" class="envelope__check" type="checkbox"/>
           <div class="envelope__flap envelope__flap--inside"></div>
@@ -232,7 +268,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
 
     </div>
@@ -244,7 +280,10 @@
     
     <div class="row">
       <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-        <p>A fragrance inspired by Gabrielle, the woman who became Coco Chanel. Passionate and free, she chose who she wanted to be. GABRIELLE CHANEL ESSENCE is the fragrance of an imaginary flower, faceted with jasmine, ylang-ylang, orange blossom and the most bewitching flower of all, Grasse tuberose. A deep and voluptuous scent.</p>
+        <p>INSPIRÉE DE GABRIELLE, LA FEMME LIBRE <br> 
+          ET PASSIONNÉE QUE FUT COCO CHANEL, <br> 
+          GABRIELLE CHANEL ESSENCE EST UNE FRAGRANCE <br>
+        FLORALE, INTESÉMENT FÉMININE ET VOLUPTUEUSE</p>
       </div>
       
     </div>
@@ -253,14 +292,20 @@
 
 
 <!-- Footer-->
-<footer class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms"> 
+<footer class="hidden wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms"> 
+
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
         <ul class="breadcrumb">
-          <li><a href="#." class="page-scroll">Coco Beauty Club</a></li>
+          <li><a href="#." class="page-scroll">Home</a></li>
+          <li><a href="#about" class="page-scroll">About</a></li>
+          <li><a href="#project" class="page-scroll">Portfolio</a></li>
+          <li><a href="#publication" class="page-scroll">Blog</a></li>
+          <li><a href="#thinkers" class="page-scroll">Team</a></li>
+          <li><a href="#contact" class="page-scroll">Contact Us</a></li>
         </ul>
-        <p>2019 Chanel</p>
+        <p>Copyright &copy; 2016 BizOne. all rights reserved.</p>
       </div>
     </div>
   </div>
@@ -271,7 +316,7 @@
 <script src="js/jquery-2.1.4.js"></script> 
 <script src="js/bootstrap.min.js"></script>
 
-<!--<script src="js/jquery.themepunch.tools.min.js"></script>-->
+<script src="js/jquery.themepunch.tools.min.js"></script>
 <script src="js/jquery.themepunch.revolution.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/owl.carousel.min.js"></script> 
@@ -284,11 +329,35 @@
 <script src="js/jquery.fancybox.js"></script>
 <script src="js/jquery.fancybox-thumbs.js"></script>
 <script src="js/jquery.fancybox-media.js"></script>
-<script src="js/jPushMenu.js"></script> 
-<!--<script src="js/functions.js"></script>-->
-<script src="js/gabrielle.js"></script>
+<script src="js/jPushMenu.js"></script>
+<script src="js/functions.js"></script>
+<!--<script type="text/javascript" src="js/TweenMax.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
+<script src="js/universal-parallax.min.js"></script>
+<script type="text/javascript">
+
+  $("video").prop('muted', true);
+
+  $("#mute-video").click( function (){
+    if( $("video").prop('muted') ) {
+      $("video").prop('muted', false);
+    } else {
+      $("video").prop('muted', true);
+    }
+  });
+
+  $('.envelope').click( function (){
+    
+    TweenMax.staggerTo( "#foto", 1, { scale:0.1, y:0, delay:4, opacity:0, ease:Back.easeIn}, 1 );
+  });
+
+</script>
+<script>
+  new universalParallax().init({
+    speed: 4
+  });
+</script>
 
 </body>
 </html>
