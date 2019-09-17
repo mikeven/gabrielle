@@ -43,34 +43,8 @@
 
 <script src="js/jquery-2.1.4.js"></script> 
 <script src="js/bootstrap.min.js"></script>
-<script src="js/chanel.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-    $(window).on('load scroll', function () {
-        var scrolled = $(this).scrollTop();
-        $('#title').css({
-            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-            'opacity': 1 - scrolled / 400 // fade out at 400px from top
-        });
-        $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
-    });
-    
-    // video controls
-    $('#state').on('click', function () {
-        var video = $('#hero-vid').get(0);
-        var icons = $('#state > span');
-        $('#overlay').toggleClass('fade');
-        if (video.paused) {
-            video.play();
-            icons.removeClass('fa-play').addClass('fa-pause');
-        } else {
-            video.pause();
-            icons.removeClass('fa-pause').addClass('fa-play');
-        }
-    });
-});
-</script>
+
 
 </head>
 <body>
@@ -125,16 +99,17 @@
                  style="z-index: 5;">DÉCOUVRIR. 
                 </p>
                 <div align="center">
-                  <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-mute"></i>  </a>
+                  <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-up"></i>  </a>
                 </div>
               
             </div>
         </div>
-        <video class="visible-desktop" id="hero-vid" poster="video/gabrielle_thumb.jpg" autoplay loop width="100%">
-            <source id="gabvid" src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
-        </video>
-        <!--<div id="state" class="visible-desktop"><span class="fa fa-pause"></span></div>
-        <img id="hero-pic" class="hidden-desktop" src="video/gabrielle_thumb.jpg" alt="">-->
+        <div id="video-wrap" class="video-wrap">
+          <video preload="metadata" autoplay loop id="my-video">
+            <source src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+          </video>
+        </div>
+        
     </div>
 
     <div id="content" class="section">
@@ -203,12 +178,27 @@
           
         </div>
     </div>
-    <script src="js/universal-parallax.min.js"></script>
+
     <script src="js/jquery.easing.min.js"></script>
-    <script>
-      new universalParallax().init({
-        speed: 4
-    });
-</script>
+    <script src="js/backgroundVideo.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#my-video').backgroundVideo();
+
+            $('#my-video').backgroundVideo({
+              $videoWrap: $('#video-wrap'),
+              $outerWrap: $(window),
+              $window: $(window),
+              minimumVideoWidth: 400,
+              
+              parallax: true,
+              parallaxOptions: {
+                effect: 1.5
+              },
+              pauseVideoOnViewLoss: false
+            });
+        });
+    </script>
+
 </body>
 </html>

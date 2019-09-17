@@ -27,4 +27,32 @@ $(document).ready(function () {
             icons.removeClass('fa-pause').addClass('fa-play');
         }
     });
+
+    $("video").prop( 'muted', true );
+
+    $("#mute-video").click( function (){
+        
+        if( $("video").prop( 'muted' ) ) {
+            
+            $("#volicon").removeClass("fa-volume-mute");
+            $("#volicon").addClass("fa-volume-up");
+            $("video").prop( 'muted', false);
+
+        } else {
+            
+            $("#volicon").removeClass("fa-volume-up");
+            $("#volicon").addClass("fa-volume-mute");
+            $("video").prop('muted', true);
+        }
+
+    });
+
+    if ( $(window).width() < 1000 ) {
+        var videoFile = 'video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4';
+        $('#gabvid').attr('src', videoFile );
+    }
+    else if ( $(window).width() > 1000 ) {
+        var videoFile = 'video/1920x1080_POS_GABRIELLE-LESSENCE.mp4';
+        $('#gabvid').attr( 'src', videoFile );
+    }
 });
