@@ -199,7 +199,7 @@ html,body {
 }
 
 .envelope__flap--inside {
-  background: url("../images/s2.png");
+  background: url("../images/cov.png");
   background-size: cover;
   -webkit-backface-visibility: visible;
           backface-visibility: visible;
@@ -221,7 +221,7 @@ html,body {
 .envelope__back:after {
   height: 100%;
   width: 100%;
-  background: url(../images/s1.png);
+  background: url(../images/env.png);
   background-size: cover;
   content: '';
   position: absolute;

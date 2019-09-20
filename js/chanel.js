@@ -46,7 +46,16 @@ $(document).ready(function () {
         }
 
     });
+    
+    $("#twbtn").click( function (){
+        
+        $(".twitter-share-button a").click();
+    });
 
+    $("#fbbtn").click( function (){
+        
+        $(".fb-share-button a").click();
+    });
     /*if ( $(window).width() < 1000 ) {
         var videoFile = 'video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4';
         $('#gabvid').attr('src', videoFile );
