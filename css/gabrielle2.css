@@ -78,13 +78,16 @@ html,body {
 /* Media Queries */
 
 @media only screen and (max-width:768px) {
-    #overlay { height:auto; }
+    #overlay { height:82vh; }
+
+    .hide_dsk{ display: none; }
+    .hide_mob{ display: block; }
     
     #hero-vid {
       backface-visibility:hidden;
       /*background:url("../video/gabrielle_thumb.jpg") no-repeat scroll 0 0 #000;*/
       background-size:cover;
-      top:0;
+      top:9%;
       min-height:100%;
       /*height:auto;
       
@@ -120,6 +123,9 @@ html,body {
       width:100%;
       z-index:-1;
     }
+
+    .hide_dsk{ display: block; }
+    .hide_mob{ display: none; }
 }
 
 

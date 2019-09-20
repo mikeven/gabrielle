@@ -5,6 +5,10 @@ $(document).ready(function () {
      
     });
 
+    $('#exampleModal').on('shown.bs.modal', function(e) {
+        $("#twbtn").addClass("twitter-share-button");
+    });
+
     $(window).on('load scroll', function () {
         var scrolled = $(this).scrollTop();
         $('#title').css({
