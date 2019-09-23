@@ -22,7 +22,7 @@ $(document).ready(function () {
     $('#state').on('click', function () {
         var video = $('#hero-vid').get(0);
         var icons = $('#state > span');
-        $('#overlay').toggleClass('fade');
+        $('#viewvideo').toggleClass('fade');
         if (video.paused) {
             video.play();
             icons.removeClass('fa-play').addClass('fa-pause');

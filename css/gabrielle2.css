@@ -12,10 +12,8 @@ html,body {
 }
 
 
-/* Video Overlay */
-
-#overlay {
-  /*background-color:rgba(0,0,0,.05);*/
+/* Video view */
+#viewvideo{
   height:100vh;
   left:0;
   position:relative;
@@ -28,8 +26,6 @@ html,body {
 
 
 /* Hero Video + Fallback */
-
-
 
 #hero-pic {
   display:block;
@@ -77,24 +73,28 @@ html,body {
 
 /* Media Queries */
 
-@media only screen and (max-width:768px) {
-    #overlay { height:82vh; }
+@media only screen and (max-width:768px) { // Mobile
+    
+    #viewvideo{
+      /*background-color:rgba(0,0,0,.05);*/
+      height:100vh;
+      left:0;
+      position:relative;
+      top:0;
+      transition:background-color 300ms ease;
+      width:100%;
+    }
 
-    .hide_dsk{ display: none; }
-    .hide_mob{ display: block; }
+    .vid_dsk{ display: none; }
+    .vid_mob{ display: block; }
     
     #hero-vid {
       backface-visibility:hidden;
-      /*background:url("../video/gabrielle_thumb.jpg") no-repeat scroll 0 0 #000;*/
       background-size:cover;
-      top:9%;
+      bottom:9%;
       min-height:100%;
-      /*height:auto;
-      
-      perspective:1000;*/
       min-width:100%;
-      position:absolute;
-      
+      position:fixed;
       width:100%;
       z-index:-1;
     }
@@ -105,7 +105,17 @@ html,body {
     .section_code{ padding: 60px 0; }
 }
 
-@media only screen and (min-width:769px) {
+@media only screen and (min-width:769px) { // Dsk
+
+    #viewvideo{
+      /*background-color:rgba(0,0,0,.05);*/
+      height:100vh;
+      left:0;
+      position:relative;
+      top:0;
+      transition:background-color 300ms ease;
+      width:100%;
+    }
 
     .section{ padding: 85px 0; }
     .section_code{ padding: 120px 0; }
@@ -124,8 +134,8 @@ html,body {
       z-index:-1;
     }
 
-    .hide_dsk{ display: block; }
-    .hide_mob{ display: none; }
+    .vid_dsk{ display: block; }
+    .vid_mob{ display: none; }
 }
 
 
