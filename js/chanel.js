@@ -2,7 +2,19 @@ $(document).ready(function () {
     
     $(window).load(function(){'use strict';
         $(".loader").fadeOut("slow");
-     
+    });
+
+    $('#dsc_foto').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 800);
+          return false;
+        }
+      }
     });
 
     $('#exampleModal').on('shown.bs.modal', function(e) {
@@ -90,7 +102,6 @@ $(document).ready(function () {
         TweenMax.staggerTo( "#foto", 1.5, { y:0, delay:2, zIndex:2, ease:Back.easeInOut }, 1 );
         $("#stenv").val("closed");
     }
-    /*function zidx(tween){
-        $( "#foto" ).css( "z-index", 2 );
-    }*/
+    
+
 });

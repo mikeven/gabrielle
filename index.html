@@ -51,7 +51,7 @@
         z-index: 2;
         position: absolute;
         overflow: hidden;
-        background: url( images/frame.jpg );
+        background: url( images/chanel-woman.jpg );
         background-size: cover;
     }
     .codeinput{ padding: 25px; border:1px solid #000; }
@@ -91,7 +91,11 @@
     .modal-body a:hover{
         background-color:#0c7abf;
     }
+    .social_inv p{
+      font-size: 10px; padding:10px 0; 
+    }
 
+    .chaneldesc p{ font-size: 16px }
     
 </style>
 
@@ -153,7 +157,17 @@
                  data-easing="Power3.easeInOut"
                  data-elementdelay="0.1"
                  data-endelementdelay="0.1"
-                 style="z-index: 5;">La esencia de una mujer. 
+                 style="z-index: 5;">ESSENCE 
+                </p>
+                <p class="tp-caption sft tp-resizeme text-center"
+                 data-x="center"
+                 data-y="260" 
+                 data-speed="500"
+                 data-start="2000"
+                 data-easing="Power3.easeInOut"
+                 data-elementdelay="0.1"
+                 data-endelementdelay="0.1"
+                 style="z-index: 5;">La esencia de una mujer 
                 </p>
 
                 <p class="tp-caption sft tp-resizeme text-center undlnd"
@@ -164,7 +178,8 @@
                  data-easing="Power3.easeInOut"
                  data-elementdelay="0.1"
                  data-endelementdelay="0.1"
-                 style="z-index: 5;"><a href="#entercode"> Descubre tu foto abajo </a> 
+                 style="z-index: 5;">
+                 <a id="dsc_foto" href="#entercode">Descubre tu foto</a> 
                 </p>
                 <div align="center">
                   <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-mute"></i>  </a>
@@ -191,8 +206,8 @@
     <div id="content" class="section">
         <div class="row">
           <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-            <h4>#GABRIELLECHANEL</h4>
-            <h4>@CHANELOFFICIAL</h4>
+            <h3>#GABRIELLECHANEL</h3>
+            <h3>@CHANELOFFICIAL</h3>
           </div>
         </div>
     </div>
@@ -225,8 +240,11 @@
       <div id="mygab" class="modal-dialog modal-md" role="document">
         <div class="modal-content">
 
-          <div class="modal-body" style="height: 550px" align="center">
-            <div class="envelope" style="margin-top: 150px;">
+          <div class="modal-body" align="center">
+            <div align="center" style="padding: 5px 0">
+              <span>Clic para abrir regalo</span>
+            </div>
+            <div class="envelope" style="margin-top: 20px;">
               <input id="openenv" class="envelope__check" type="checkbox"/>
               <input id="stenv" type="hidden"/ value="closed">
               <div class="envelope__flap envelope__flap--inside"></div>
@@ -234,9 +252,17 @@
                 <div id="foto"></div>
               <div class="envelope__back"></div>
             </div>
-            <div align="center" style="padding: 5px 0"><span>Clic para abrir regalo</span></div>
+            
+            <div class="social_inv">
+              <p>La Esencia de una mujer #GABRIELLECHANEL</p>
+            </div>
 
             <div class="sharethis-inline-share-buttons"></div>
+            
+            <div class="social_inv">
+              <p>Compártelo en tus redes sociales con el #GABRIELLECHANEL</p>
+            </div>
+
             <!-- TWITTER SHARE 
             <a id="twbtn" href="#!">
               <i class="btn-icon"></i>
@@ -264,7 +290,7 @@
 
     <div class="section" style="background: #FFF">
         <div class="container">
-            <div class="row">
+            <div class="chaneldesc row">
               
               <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
                 <p>Un perfume inspirado en Gabrielle, la mujer que fue Coco Chanel. Una mujer libre y apasionada que decidió quién quería ser. GABRIELLE CHANEL ESSENCE es la fragancia de una flor imaginaria, facetada con jazmín, ylang-ylang, flor de naranjo y la flor más cautivadora de todas, el nardo de Grasse. Ofrece una estela profunda y voluptuosa.</p>
@@ -280,6 +306,8 @@
       new universalParallax().init({
         speed: 4
       });
+
+      
     </script>
 </body>
 </html>
