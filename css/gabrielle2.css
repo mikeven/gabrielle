@@ -87,6 +87,7 @@ html,body {
 
     .vid_dsk{ display: none; }
     .vid_mob{ display: block; }
+    .chaneldesc p{ font-size: 12px }
     
     #hero-vid {
       backface-visibility:hidden;
@@ -136,6 +137,7 @@ html,body {
 
     .vid_dsk{ display: block; }
     .vid_mob{ display: none; }
+    .chaneldesc p{ font-size: 16px }
 }
 
 

@@ -44,10 +44,10 @@
 
 <style type="text/css">
     #foto{
-        top: 20px;
-        left: 50px;
-        width: 200px;
-        height: 238px;
+        top: 14px;
+        left: 15px;
+        width: 270px;
+        height: 270px;
         z-index: 2;
         position: absolute;
         overflow: hidden;
@@ -94,8 +94,6 @@
     .social_inv p{
       font-size: 10px; padding:10px 0; 
     }
-
-    .chaneldesc p{ font-size: 16px }
     
 </style>
 
@@ -121,7 +119,7 @@
 </head>
 <body>
     <div id="viewvideo" style="padding: 5% 0;">
-        <div class="row content" >
+        <div class="row content">
             <div class="col-md-6 col-sm-6"></div>
             <div class="col-md-6 col-sm-6" style="padding: 10% 0;">
               
@@ -194,7 +192,7 @@
           </video>
         </div>
         <div class="vid_mob">
-          <video class="visible-desktop" id="hero-vid" poster="video/gabrielle_thumb.jpg" 
+          <video class="visible-desktop" id="hero-vid" poster="video/gabrielle_thumb_mob.png" 
           autoplay loop muted width="100%" height="100%">
               <source id="gabvid" src="video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4" type="video/mp4">
           </video>
@@ -242,7 +240,7 @@
 
           <div class="modal-body" align="center">
             <div align="center" style="padding: 5px 0">
-              <span>Clic para abrir regalo</span>
+              <span class="social_inv">Clic en el sobre para ver tu foto</span>
             </div>
             <div class="envelope" style="margin-top: 20px;">
               <input id="openenv" class="envelope__check" type="checkbox"/>
@@ -306,7 +304,7 @@
       new universalParallax().init({
         speed: 4
       });
-
+      FB.XFBML.parse();
       
     </script>
 </body>

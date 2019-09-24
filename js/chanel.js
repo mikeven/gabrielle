@@ -82,24 +82,25 @@ $(document).ready(function () {
     }*/
 
     $(".envelope").click( function (){
-        if( $("#stenv").val() == "closed" ){
-            TweenMax.staggerTo( "#foto", 3, 
-            { y:-250, delay:8, onComplete:envOut, ease:Back.easeIn}, 1.5 );
-        }
-        if( $("#stenv").val() == "open" ){
+        if( $("#stenv").val() == "closed" ){ // Foto hacia arriba para salir del sobre
             TweenMax.staggerTo( "#foto", 2, 
-            { y:-250, delay:2, onComplete:envIn, ease:Back.easeIn}, 1 );
+            { y:-300, zIndex:4, onComplete:envOut, ease: Expo.easeIn }, 1 );
+        }
+        if( $("#stenv").val() == "open" ){  // Foto hacia arriba para entrar al sobre
+            TweenMax.staggerTo( "#foto", 2, 
+            { y:-280, onComplete:envIn, ease: Back.easeIn }, 1 );
         }
     });
 
     function envOut(tween){
+        // Foto hacia abajo para salir del sobre
         $( "#foto" ).css( "z-index", 4 );
-        TweenMax.staggerTo( "#foto", 2, { y:0, delay:2, ease:Back.easeInOut }, 2 );
+        TweenMax.staggerTo( "#foto", 2, { y:0, ease: Back.easeInOut }, 2 );
         $("#stenv").val("open");
     }
     function envIn(tween){
-        
-        TweenMax.staggerTo( "#foto", 1.5, { y:0, delay:2, zIndex:2, ease:Back.easeInOut }, 1 );
+        // Foto hacia abajo para entrar al sobre
+        TweenMax.staggerTo( "#foto", 1.5, { y:0, zIndex:2, ease: Expo.easeInOut }, 1 );
         $("#stenv").val("closed");
     }
     

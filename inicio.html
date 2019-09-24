@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,13 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@nytimes">
-    <meta name="twitter:creator" content="@SarahMaslinNir">
-    <meta name="twitter:title" content="Twitter Chanel">
+    <meta name="twitter:site" content="@Chanel">
+    <meta name="twitter:creator" content="@Chanel">
+    <meta name="twitter:title" content="#GABRIELLECHANEL">
     <meta name="twitter:description" content="Descripción">
     <meta name="twitter:image" content="https://cocobeautyclub.com/gabrielle/video/gabrielle_thumb.jpg">
 
-    <title>Chanel Gabrielle</title>
+    <meta property="og:url"           content="https://cocobeautyclub.com/gabrielle" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="#GABRIELLECHANEL" />
+    <meta property="og:description"   content="Descripción" />
+    <meta property="og:image"         content="https://cocobeautyclub.com/gabrielle/video/gabrielle_thumb.jpg" />
+
+    <title>Gabrielle</title>
+    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/icomoon-fonts.css">
@@ -36,14 +44,14 @@
 
 <style type="text/css">
     #foto{
-        top: 20px;
-        left: 50px;
-        width: 200px;
-        height: 238px;
+        top: 14px;
+        left: 15px;
+        width: 270px;
+        height: 270px;
         z-index: 2;
         position: absolute;
         overflow: hidden;
-        background: url( images/frame.jpg );
+        background: url( images/chanel-woman.jpg );
         background-size: cover;
     }
     .codeinput{ padding: 25px; border:1px solid #000; }
@@ -83,7 +91,11 @@
     .modal-body a:hover{
         background-color:#0c7abf;
     }
+    .social_inv p{
+      font-size: 10px; padding:10px 0; 
+    }
 
+    
     
 </style>
 
@@ -91,6 +103,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script src="js/chanel.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -102,27 +115,17 @@
         });
         $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
     });
-    
-    // video controls
-    $('#state').on('click', function () {
-        var video = $('#hero-vid').get(0);
-        var icons = $('#state > span');
-        $('#overlay').toggleClass('fade');
-        if (video.paused) {
-            video.play();
-            icons.removeClass('fa-play').addClass('fa-pause');
-        } else {
-            video.pause();
-            icons.removeClass('fa-pause').addClass('fa-play');
-        }
-    });
 });
 </script>
 
 </head>
 <body>
-    <div id="overlay">
-        <div class="row content" style="padding: 5% 0;">
+  <div id="fb-root"></div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v4.0&appId=400303776774052&autoLogAppEvents=1"></script>
+    
+    <div id="viewvideo" style="padding: 5% 0;">
+        <div class="row content">
             <div class="col-md-6 col-sm-6"></div>
             <div class="col-md-6 col-sm-6" style="padding: 10% 0;">
               
@@ -158,7 +161,17 @@
                  data-easing="Power3.easeInOut"
                  data-elementdelay="0.1"
                  data-endelementdelay="0.1"
-                 style="z-index: 5;">ESSENCE <br> LA NOUVELLE EAU DA PARFUM. 
+                 style="z-index: 5;">ESSENCE 
+                </p>
+                <p class="tp-caption sft tp-resizeme text-center"
+                 data-x="center"
+                 data-y="260" 
+                 data-speed="500"
+                 data-start="2000"
+                 data-easing="Power3.easeInOut"
+                 data-elementdelay="0.1"
+                 data-endelementdelay="0.1"
+                 style="z-index: 5;">La esencia de una mujer 
                 </p>
 
                 <p class="tp-caption sft tp-resizeme text-center undlnd"
@@ -169,7 +182,8 @@
                  data-easing="Power3.easeInOut"
                  data-elementdelay="0.1"
                  data-endelementdelay="0.1"
-                 style="z-index: 5;"><a href="#entercode"> Descubre tu foto abajo </a> 
+                 style="z-index: 5;">
+                 <a id="dsc_foto" href="#entercode">Descubre tu foto</a> 
                 </p>
                 <div align="center">
                   <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-mute"></i>  </a>
@@ -177,10 +191,18 @@
               
             </div>
         </div>
-        <video class="visible-desktop" id="hero-vid" poster="video/gabrielle_thumb.jpg" 
-        autoplay loop muted width="100%">
-            <source id="gabvid" src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
-        </video>
+        <div class="vid_dsk">
+          <video class="visible-desktop" id="hero-vid" poster="video/gabrielle_thumb.jpg" 
+          autoplay loop muted width="100%">
+              <source id="gabvid" src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vid_mob">
+          <video class="visible-desktop" id="hero-vid" poster="video/gabrielle_thumb_mob.png" 
+          autoplay loop muted width="100%" height="100%">
+              <source id="gabvid" src="video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+          </video>
+        </div>
         <!--<div id="state" class="visible-desktop"><span class="fa fa-pause"></span></div>
         <img id="hero-pic" class="hidden-desktop" src="video/gabrielle_thumb.jpg" alt="">-->
     </div>
@@ -188,11 +210,9 @@
     <div id="content" class="section">
         <div class="row">
           <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-            <h4>#GABRIELLECHANEL</h4>
-            <h4>@CHANELOFFICIAL</h4>
+            <h3>#GABRIELLECHANEL</h3>
+            <h3>@CHANELOFFICIAL</h3>
           </div>
-
-          
         </div>
     </div>
 
@@ -203,14 +223,13 @@
                     data-wow-duration="500ms" data-wow-delay="300ms">
                     <form class="form-inline" id="contact-form" onSubmit="return false">
                   
-                        <label>ENTER CODE</label>
+                        <label>Ingrese código</label>
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                           <input type="text" class="form-control codeinput" name="code" id="code" >
                         </div>
                     
                         <div class="col-xs-12 col-md-12" style="padding: 15px">
-                          
-                          <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Send</button>
+                          <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Enviar</button>
                         </div>
                 
                     </form>
@@ -225,8 +244,11 @@
       <div id="mygab" class="modal-dialog modal-md" role="document">
         <div class="modal-content">
 
-          <div class="modal-body" style="height: 550px" align="center">
-            <div class="envelope" style="margin-top: 150px;">
+          <div class="modal-body" align="center">
+            <div align="center" style="padding: 5px 0">
+              <span class="social_inv">Clic para abrir regalo</span>
+            </div>
+            <div class="envelope" style="margin-top: 20px;">
               <input id="openenv" class="envelope__check" type="checkbox"/>
               <input id="stenv" type="hidden"/ value="closed">
               <div class="envelope__flap envelope__flap--inside"></div>
@@ -234,19 +256,27 @@
                 <div id="foto"></div>
               <div class="envelope__back"></div>
             </div>
-            <div align="center" style="padding: 5px 0"><span>Click to open gift</span></div>
-            <a id="twbtn" href="https://twitter.com/share?ref_src=twsrc%5Etfw">
-              <i class="btn-icon"></i>
-              <span class="btn-text">Tweet</span>
-            </a>
+            
+            <div class="social_inv">
+              <p>La Esencia de una mujer #GABRIELLECHANEL</p>
+            </div>
+
+            
+            
+            <div class="social_inv">
+              <p>Compártelo en tus redes sociales con el #GABRIELLECHANEL</p>
+            </div>
+            FB
+            <div class="fb-share-button" data-href="https://cocobeautyclub.com/gabrielle" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcocobeautyclub.com%2Fgabrielle&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+
           </div>
 
-          <!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>-->
+          <!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
           
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </div>
 
         </div>
@@ -255,10 +285,10 @@
 
     <div class="section" style="background: #FFF">
         <div class="container">
-            <div class="row">
+            <div class="chaneldesc row">
               
               <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                <p>A fragrance inspired by Gabrielle, the woman who became Coco Chanel. Passionate and free, she chose who she wanted to be. GABRIELLE CHANEL ESSENCE is the fragrance of an imaginary flower, faceted with jasmine, ylang-ylang, orange blossom and the most bewitching flower of all, Grasse tuberose. A deep and voluptuous scent.</p>
+                <p>Un perfume inspirado en Gabrielle, la mujer que fue Coco Chanel. Una mujer libre y apasionada que decidió quién quería ser. GABRIELLE CHANEL ESSENCE es la fragancia de una flor imaginaria, facetada con jazmín, ylang-ylang, flor de naranjo y la flor más cautivadora de todas, el nardo de Grasse. Ofrece una estela profunda y voluptuosa.</p>
               </div>
               
             </div>
@@ -270,7 +300,9 @@
     <script>
       new universalParallax().init({
         speed: 4
-    });
-</script>
+      });
+      FB.XFBML.parse();
+      
+    </script>
 </body>
 </html>
