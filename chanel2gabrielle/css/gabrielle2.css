@@ -21,9 +21,8 @@ html,body {
 #dsc_foto:hover, #mute-video:hover{ color: #222222; text-decoration: underline; }
 
 #socialkeys{ background-color: #FFF; }
-#entercode{
-  background:url(../images/Gabrielle-essence.png) top fixed;
-  background-size: cover;
+#chanel_desc{
+  background:#FFF;
 }
 
 .codeinput {
@@ -199,6 +198,8 @@ a.readmore:hover, a.readmore:focus{
 
 .fade { background-color:rgba(0,0,0,.85) !important; }
 
+.nomargin{ margin-right: 0 !important; margin-left: 0 !important;}
+
 
 /* Hero Video + Fallback */
 
@@ -256,7 +257,7 @@ a.readmore:hover, a.readmore:focus{
     .section {
       padding: 35px 0;
     }
-    .section_code{ padding: 60px 0; }
+    .section_code{ padding: 0; }
 }
 
 @media only screen and (min-width:993px) { // Dsk
@@ -264,6 +265,7 @@ a.readmore:hover, a.readmore:focus{
     .vid_dsk{ display: block; }
     .vid_mob{ display: none; }
     .chaneldesc p{ font-size: 16px }
+    .section_code{ padding: 60px 0; }
 }
 
 

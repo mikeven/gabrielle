@@ -8,6 +8,20 @@
     <meta name="keywords" content="Gabrielle,Chanel,esencia,mujer">
     <meta name="author" content="">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Chanel">
+    <meta name="twitter:creator" content="@Chanel">
+    <meta name="twitter:title" content="#GABRIELLECHANEL">
+    <meta name="twitter:description" content="Descripción">
+    <meta name="twitter:image" content="https://cocobeautyclub.com/gabrielle/video/gabrielle_thumb.jpg">
+
+    <meta property="og:url"           content="https://cocobeautyclub.com/gabrielle" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="#GABRIELLECHANEL" />
+    <meta property="og:description"   content="Descripción" />
+    <meta property="og:image"         content="https://cocobeautyclub.com/gabrielle/video/gabrielle_thumb.jpg" />
+
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5d84edd16b3e5d0012703a4c&product=inline-share-buttons' async='async'></script>
 
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
@@ -19,7 +33,9 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/gabrielle2.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" >
-    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="stylesheet" href="css/all.css" type="text/css">
+    <link rel="stylesheet" href="css/universal-parallax.min.css" type="text/css">
+
     <!-- Javascript Files
     ================================================== -->
     <script src="js/jquery-2.1.4.js"></script>
@@ -112,11 +128,13 @@
                             <h3>GABRIELLE</h3>
                             <h1>CHANEL</h1>
                             <p>ESSENCE</p>
-                            <p>La esencia de una mujer  </p>
+                            <p>La esencia de una mujer</p>
                             <p>
                                 <a id="dsc_foto" href="#entercode">Descubre tu foto</a> 
                             </p>
-                            <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-mute"></i>  </a>
+                            <div style="float: right; margin-right: 45%">
+                                <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-mute"></i>  </a>
+                            </div>
                         </div>
                         
                     </div>
@@ -132,12 +150,12 @@
 
         <div class="vid_dsk">
           <video autoplay="autoplay" loop="loop" autobuffer="autobuffer">
-              <source id="gabvid" src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+              <source id="gabvid" src="video/1280x720_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
           </video>
         </div>
         <div class="vid_mob">
           <video autoplay="autoplay" loop="loop" autobuffer="autobuffer">
-              <source id="gabvid" src="video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+              <source id="gabvid" src="video/720x1280_TEH__GABRIELLE-LESSENCE.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -161,102 +179,101 @@
             </section>
             <!-- /.Hashtags and social account -->
 
-            <!-- why-choose-us section begin -->
-            <section id="entercode" data-speed="10" data-type="background">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <form class="form-inline" id="contact-form" onSubmit="return false">
-                  
-                                <label>Ingrese código</label>
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                  <input type="text" class="form-control codeinput" name="code" id="code" >
-                                </div>
-                            
-                                <div class="col-xs-12 col-md-12" style="padding: 15px">
-                                  <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Enviar</button>
-                                </div>
-                        
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <!-- why-choose-us section close -->
-
-            <!-- Descripción Chanel Gabrielle -->
-            <section id="page-team" data-speed="8" data-type="background">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <p class="animated chaneldesc" data-animation="fadeIn">
-                                Un perfume inspirado en Gabrielle, la mujer que fue Coco Chanel. Una mujer libre y apasionada que decidió quién quería ser. GABRIELLE CHANEL ESSENCE es la fragancia de una flor imaginaria, facetada con jazmín, ylang-ylang, flor de naranjo y la flor más cautivadora de todas, el nardo de Grasse. Ofrece una estela profunda y voluptuosa.
-                            </p>
-                            <div class="spacer-single"></div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <!-- /.Descripción Chanel Gabrielle -->
-
         </div>
         <!-- content close -->
 
-        <!-- Modal -->
-            <div class="modal bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div id="mygab" class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-
-                  <div class="modal-body" align="center">
-                    <div align="center" style="padding: 5px 0">
-                      <span class="social_inv">Clic en el sobre para ver tu foto</span>
-                    </div>
-                    <div class="envelope" style="margin-top: 20px;">
-                      <input id="openenv" class="envelope__check" type="checkbox"/>
-                      <input id="stenv" type="hidden"/ value="closed">
-                      <div class="envelope__flap envelope__flap--inside"></div>
-                      <div class="envelope__flap"></div>
-                        <div id="foto"></div>
-                      <div class="envelope__back"></div>
-                    </div>
+        <!-- Ingreso de código -->
+        <section id="entercode" class="">
+            <div class="section_code">
+                <div class="row nomargin">
+                    <div class="col-md-12 text-center wow fadeIn" 
+                        data-wow-duration="500ms" data-wow-delay="300ms">
+                        <form class="form-inline" id="contact-form" onSubmit="return false">
+                      
+                            <label>Ingrese código</label>
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                              <input type="text" class="form-control codeinput" name="code" id="code" >
+                            </div>
+                        
+                            <div class="col-xs-12 col-md-12" style="padding: 15px">
+                              <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Enviar</button>
+                            </div>
                     
-                    <div class="social_inv">
-                      <p>La Esencia de una mujer #GABRIELLECHANEL</p>
+                        </form>
                     </div>
-
-                    <div class="sharethis-inline-share-buttons"></div>
-                    
-                    <div class="social_inv">
-                      <p>Compártelo en tus redes sociales con el #GABRIELLECHANEL</p>
-                    </div>
-
-                    <!-- TWITTER SHARE 
-                    <a id="twbtn" href="#!">
-                      <i class="btn-icon"></i>
-                      <span class="btn-text">Tweet</span>
-                    </a>
-
-                    <a id="fbbtn" href="#!">
-                      <i class="btn-icon"></i>
-                      <span class="btn-text">Share</span>
-                    </a>-->
-
-                  </div>
-
-                  <!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>-->
-                  
-                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  </div>
-
                 </div>
-              </div>
             </div>
+          <div class="parallax" data-parallax-image="images/Gabrielle-essence.png"></div>
+        </section>
+        <!-- /.Ingreso de código -->
+
+        <!-- Descripción Chanel Gabrielle -->
+        <section id="chanel_desc" data-speed="8" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="chaneldesc" data-animation="fadeIn">
+                            Un perfume inspirado en Gabrielle, la mujer que fue Coco Chanel. Una mujer libre y apasionada que decidió quién quería ser. GABRIELLE CHANEL ESSENCE es la fragancia de una flor imaginaria, facetada con jazmín, ylang-ylang, flor de naranjo y la flor más cautivadora de todas, el nardo de Grasse. Ofrece una estela profunda y voluptuosa.
+                        </p>
+                        <div class="spacer-single"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.Descripción Chanel Gabrielle -->
+
+
+        <!-- Modal -->
+        <div class="modal bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div id="mygab" class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+
+              <div class="modal-body" align="center">
+                <div align="center" style="padding: 5px 0">
+                  <span class="social_inv">Clic en el sobre para ver tu foto</span>
+                </div>
+                <div class="envelope" style="margin-top: 20px;">
+                  <input id="openenv" class="envelope__check" type="checkbox"/>
+                  <input id="stenv" type="hidden"/ value="closed">
+                  <div class="envelope__flap envelope__flap--inside"></div>
+                  <div class="envelope__flap"></div>
+                    <div id="foto"></div>
+                  <div class="envelope__back"></div>
+                </div>
+                
+                <div class="social_inv">
+                  <p>La Esencia de una mujer #GABRIELLECHANEL</p>
+                </div>
+
+                <div class="sharethis-inline-share-buttons"></div>
+                
+                <div class="social_inv">
+                  <p>Compártelo en tus redes sociales con el #GABRIELLECHANEL</p>
+                </div>
+
+
+              </div>
+
+              <!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>-->
+              
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- /.Modal -->
 
     </div>
+    
+    <script src="js/universal-parallax.min.js"></script>
+    <script>
+      new universalParallax().init({
+        speed: 4
+      });
+    </script>
 </body>
 </html>
