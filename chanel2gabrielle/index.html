@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gabrielle Chanel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gabrielle, La esencia de una mujer">
+    <meta name="keywords" content="Gabrielle,Chanel,esencia,mujer">
+    <meta name="author" content="">
+
+
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/gabrielle2.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" >
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+    <script src="js/ender.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.scrollto.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/validation.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="js/chanel.js"></script>
+
+
+    <!-- SLIDER REVOLUTION SCRIPTS  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="js/rev-setting-1.js"></script>
+
+    <style type="text/css">
+        #foto{
+            top: 14px;
+            left: 15px;
+            width: 270px;
+            height: 270px;
+            z-index: 2;
+            position: absolute;
+            overflow: hidden;
+            background: url( images/chanel-woman.jpg );
+            background-size: cover;
+        }
+
+        .modal-body a .btn-icon{
+            position: relative;
+            width:60px;
+            height: 20px;
+            padding: 1px 10px 1px 7px;
+            font-weight: 500;
+            color: #fff;
+            cursor: pointer;
+            background-color: #1b95e0;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E");
+        }
+        .modal-body a .btn-icon:hover{
+            background-color:#0c7abf;
+        }
+        .btn-text{
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 3px;
+        }
+        .modal-body a{
+            position: relative;
+            height: 20px;
+            padding: 5px 14px 5px 6px;
+            font-weight: 500;
+            color: #fff;
+            cursor: pointer;
+            background-color: #1b95e0;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .modal-body a:hover{
+            background-color:#0c7abf;
+        }
+        .social_inv p{
+          font-size: 10px; padding:10px 0; 
+        }
+    </style>
+</head>
+
+<body id="homepage">
+    <div class="loader"></div>
+
+    <div id="wrapper">
+
+        <!-- revolution slider begin -->
+        <div class="fullwidthbanner-container" style="padding: 5% 0;">
+            <div id="revolution-slider">
+                <div class="_row content_">
+                    <div class="col-md-6 col-sm-6"></div>
+                    <div class="col-md-6 col-sm-6" style="padding: 10% 0;">
+                        <div class="text-center">
+                            <h3>GABRIELLE</h3>
+                            <h1>CHANEL</h1>
+                            <p>ESSENCE</p>
+                            <p>La esencia de una mujer  </p>
+                            <p>
+                                <a id="dsc_foto" href="#entercode">Descubre tu foto</a> 
+                            </p>
+                            <a id="mute-video" href="#!"> <i id="volicon" class="fas fa-volume-mute"></i>  </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- revolution slider close -->
+
+        <!-- HTML5 Video Code "Video For Everybody" http://camendesign.com/code/video_for_everybody -->
+        <!--<video autoplay="autoplay" loop="loop" autobuffer="autobuffer"  poster="">
+            <source src="https://cocobeautyclub.com/gabrielle/video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4" />
+        </video> -->
+
+        <div class="vid_dsk">
+          <video autoplay="autoplay" loop="loop" autobuffer="autobuffer">
+              <source id="gabvid" src="video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="vid_mob">
+          <video autoplay="autoplay" loop="loop" autobuffer="autobuffer">
+              <source id="gabvid" src="video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
+
+            <!-- Hashtags and social account -->
+            <section id="socialkeys" class="bg-id-color" data-speed="8" data-type="background">
+                
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <h3>#GABRIELLECHANEL</h3>
+                            <h3>@CHANELOFFICIAL</h3>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+            <!-- /.Hashtags and social account -->
+
+            <!-- why-choose-us section begin -->
+            <section id="entercode" data-speed="10" data-type="background">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <form class="form-inline" id="contact-form" onSubmit="return false">
+                  
+                                <label>Ingrese código</label>
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                  <input type="text" class="form-control codeinput" name="code" id="code" >
+                                </div>
+                            
+                                <div class="col-xs-12 col-md-12" style="padding: 15px">
+                                  <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Enviar</button>
+                                </div>
+                        
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- why-choose-us section close -->
+
+            <!-- Descripción Chanel Gabrielle -->
+            <section id="page-team" data-speed="8" data-type="background">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p class="animated chaneldesc" data-animation="fadeIn">
+                                Un perfume inspirado en Gabrielle, la mujer que fue Coco Chanel. Una mujer libre y apasionada que decidió quién quería ser. GABRIELLE CHANEL ESSENCE es la fragancia de una flor imaginaria, facetada con jazmín, ylang-ylang, flor de naranjo y la flor más cautivadora de todas, el nardo de Grasse. Ofrece una estela profunda y voluptuosa.
+                            </p>
+                            <div class="spacer-single"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- /.Descripción Chanel Gabrielle -->
+
+        </div>
+        <!-- content close -->
+
+        <!-- Modal -->
+            <div class="modal bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div id="mygab" class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+
+                  <div class="modal-body" align="center">
+                    <div align="center" style="padding: 5px 0">
+                      <span class="social_inv">Clic en el sobre para ver tu foto</span>
+                    </div>
+                    <div class="envelope" style="margin-top: 20px;">
+                      <input id="openenv" class="envelope__check" type="checkbox"/>
+                      <input id="stenv" type="hidden"/ value="closed">
+                      <div class="envelope__flap envelope__flap--inside"></div>
+                      <div class="envelope__flap"></div>
+                        <div id="foto"></div>
+                      <div class="envelope__back"></div>
+                    </div>
+                    
+                    <div class="social_inv">
+                      <p>La Esencia de una mujer #GABRIELLECHANEL</p>
+                    </div>
+
+                    <div class="sharethis-inline-share-buttons"></div>
+                    
+                    <div class="social_inv">
+                      <p>Compártelo en tus redes sociales con el #GABRIELLECHANEL</p>
+                    </div>
+
+                    <!-- TWITTER SHARE 
+                    <a id="twbtn" href="#!">
+                      <i class="btn-icon"></i>
+                      <span class="btn-text">Tweet</span>
+                    </a>
+
+                    <a id="fbbtn" href="#!">
+                      <i class="btn-icon"></i>
+                      <span class="btn-text">Share</span>
+                    </a>-->
+
+                  </div>
+
+                  <!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>-->
+                  
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+    </div>
+</body>
+</html>

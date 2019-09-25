@@ -122,7 +122,6 @@ html,body {
     .section_code{ padding: 120px 0; }
     #hero-vid {
       backface-visibility:hidden;
-      background:url("../video/gabrielle_thumb.jpg") no-repeat scroll 0 0 #000;
       background-size:cover;
       bottom:-100px;
       height:auto;
