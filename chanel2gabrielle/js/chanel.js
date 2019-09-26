@@ -74,12 +74,12 @@ $(document).ready(function () {
 
     $(".envelope").click( function (){
         if( $("#stenv").val() == "closed" ){ // Foto hacia arriba para salir del sobre
-            TweenMax.staggerTo( "#foto", 2, 
-            { y:-300, zIndex:4, onComplete:envOut, ease: Expo.easeIn }, 1 );
+            $( "#foto" ).css( "z-index", 3 );
+            TweenMax.staggerTo( "#foto", 2, { y:-300, onComplete:envOut, ease: Expo.easeIn }, 1 );
         }
         if( $("#stenv").val() == "open" ){  // Foto hacia arriba para entrar al sobre
             TweenMax.staggerTo( "#foto", 2, 
-            { y:-280, onComplete:envIn, ease: Back.easeIn }, 1 );
+            { y:-320, onComplete:envIn, ease: Back.easeIn }, 1 );
         }
     });
 
@@ -91,7 +91,7 @@ $(document).ready(function () {
     }
     function envIn(tween){
         // Foto hacia abajo para entrar al sobre
-        TweenMax.staggerTo( "#foto", 1.5, { y:0, zIndex:2, ease: Expo.easeInOut }, 1 );
+        TweenMax.staggerTo( "#foto", 0.85, { y:0, zIndex:2, ease: Expo.easeInOut }, 1 );
         $("#stenv").val("closed");
     }
     
