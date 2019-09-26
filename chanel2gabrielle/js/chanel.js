@@ -95,5 +95,13 @@ $(document).ready(function () {
         $("#stenv").val("closed");
     }
     
+    /*Social sharing
+    <a href="https://twitter.com/intent/tweet?url=https://cocobeautyclub.com/gabrielle&text=Gabrielle&hashtags=GABRIELLECHANEL" data-text="Gabrielle Chanel" data-url="https://cocobeautyclub.com/gabrielle" data-hashtags="GABRIELLECHANEL" data-lang="es">Tw</a>
 
+                <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v4.0&appId=400303776774052"></script>
+                <!-- Your share button code -->
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcocobeautyclub.com%2Fgabrielle&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a>
+
+                <a href="mailto:mikeven@gmail.com?subject=Gabrielle%20Chanel&amp;body=Comp%C3%A1rtelo%20en%20tus%20redes%20sociales%20con%20el%20%23GABRIELLECHANEL%0Avisita%20https%3A%2F%2Fcocobeautyclub.com%2Fgabrielle">Enviar</a>*/
 });
