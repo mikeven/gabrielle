@@ -74,11 +74,6 @@
             background-size: cover;
         }
 
-        .container--full {
-            width: 100%;
-            height: 100vh;
-        }
-
         .social_inv p{
           font-size: 10px; padding:10px 0; 
         }
@@ -128,16 +123,19 @@
             </div>
             <!-- revolution slider close -->
 
+            <!-- HTML5 Video Code "Video For Everybody" http://camendesign.com/code/video_for_everybody -->
+            <!--<video autoplay="autoplay" loop="loop" autobuffer="autobuffer"  poster="">
+                <source src="https://cocobeautyclub.com/gabrielle/video/1920x1080_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4" />
+            </video> -->
+
             <div class="vid_dsk">
-              <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" id="vdsk" 
-              poster="images/Gabrielle-essence.png">
-                  <source src="video/1280x720_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+              <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" id="vdsk">
+                  <source id="gabvid" src="video/1280x720_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
               </video>
             </div>
             <div class="vid_mob">
-              <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" id="vmob" 
-              poster="images/Gabrielle-essence.png">
-                  <source src="video/720x1280_TEH__GABRIELLE-LESSENCE.mp4" type="video/mp4">
+              <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" id="vdsk">
+                  <source id="gabvid" src="video/720x1280_TEH__GABRIELLE-LESSENCE.mp4" type="video/mp4">
               </video>
             </div>
 
@@ -155,7 +153,9 @@
                         <p>
                             <a id="dsc_foto" href="#entercode">Descubre tu foto</a> 
                         </p>
+                        
                     </div>
+                    
                 </div>
             </div>
             <div class="parallax bgmain"><div class="bgnd_layer"></div></div>
@@ -166,14 +166,18 @@
 
             <!-- Hashtags and social account -->
             <section id="socialkeys" class="bg-id-color" data-speed="8" data-type="background">
+                
                 <div class="container">
                     <div class="row">
+
                         <div class="col-md-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
                             <h3>#GABRIELLECHANEL</h3>
                             <h3>@CHANELOFFICIAL</h3>
                         </div>
+
                     </div>
                 </div>
+
             </section>
             <!-- /.Hashtags and social account -->
 
@@ -287,11 +291,24 @@
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
         if( iOS ){
-            $("#hometop").remove();
-            //$(".iostop").css('display','block');
+            $("#hometop").css('display','none');
+            $(".iostop").css('display','block');
         }else{
-            //$("#hometop").css('display','block');
-            $(".iostop").remove();
+             $("#hometop").css('display','block');
+            $(".iostop").css('display','none');
+        }
+
+        if ( $(window).width() < 992 ) {
+            var video = $("#vdsk").get(0);
+            video.stop();
+            var video2 = $("#vmob").get(0);
+            video2.play();
+        }
+        else if ( $(window).width() > 992 ) {
+            var video = $("#vdsk").get(0);
+            video.play();
+            var video2 = $("#vmob").get(0);
+            video2.stop();
         }
     </script>
 </body>

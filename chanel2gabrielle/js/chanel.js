@@ -30,19 +30,6 @@ $(document).ready(function () {
         $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
     });
     
-    // video controls
-    $('#state').on('click', function () {
-        var video = $('#hero-vid').get(0);
-        var icons = $('#state > span');
-        $('#viewvideo').toggleClass('fade');
-        if (video.paused) {
-            video.play();
-            icons.removeClass('fa-play').addClass('fa-pause');
-        } else {
-            video.pause();
-            icons.removeClass('fa-pause').addClass('fa-play');
-        }
-    });
 
     $("video").prop( 'muted', true );
 
@@ -63,14 +50,18 @@ $(document).ready(function () {
 
     });
     
-    /*if ( $(window).width() < 1000 ) {
-        var videoFile = 'video/1080x1920_TEH_GABRIELLE-LESSENCE.mp4';
-        $('#gabvid').attr('src', videoFile );
+    if ( $(window).width() < 992 ) {
+        var video = $("#vdsk").get(0);
+        video.pause();
+        var video2 = $("#vmob").get(0);
+        video2.play();
     }
-    else if ( $(window).width() > 1000 ) {
-        var videoFile = 'video/1920x1080_POS_GABRIELLE-LESSENCE.mp4';
-        $('#gabvid').attr( 'src', videoFile );
-    }*/
+    else if ( $(window).width() > 992 ) {
+        var video = $("#vdsk").get(0);
+        video.play();
+        var video2 = $("#vmob").get(0);
+        video2.pause();
+    }
 
     $(".envelope").click( function (){
         if( $("#stenv").val() == "closed" ){ // Foto hacia arriba para salir del sobre
@@ -95,13 +86,4 @@ $(document).ready(function () {
         $("#stenv").val("closed");
     }
     
-    /*Social sharing
-    <a href="https://twitter.com/intent/tweet?url=https://cocobeautyclub.com/gabrielle&text=Gabrielle&hashtags=GABRIELLECHANEL" data-text="Gabrielle Chanel" data-url="https://cocobeautyclub.com/gabrielle" data-hashtags="GABRIELLECHANEL" data-lang="es">Tw</a>
-
-                <div id="fb-root"></div>
-                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v4.0&appId=400303776774052"></script>
-                <!-- Your share button code -->
-                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcocobeautyclub.com%2Fgabrielle&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a>
-
-                <a href="mailto:mikeven@gmail.com?subject=Gabrielle%20Chanel&amp;body=Comp%C3%A1rtelo%20en%20tus%20redes%20sociales%20con%20el%20%23GABRIELLECHANEL%0Avisita%20https%3A%2F%2Fcocobeautyclub.com%2Fgabrielle">Enviar</a>*/
 });
