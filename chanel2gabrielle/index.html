@@ -89,22 +89,16 @@
 
         #foto-acciones a{ color: #b98c3e }
         #foto-acciones a:hover{ color: #f0c06b }
-
-        .bgmain{
-            background: url( images/gabrielle.gif );
-        }
     </style>
 </head>
 
 <body id="homepage">
-    <div class="loader"></div>
 
     <div id="wrapper">
-
-        <div id="hometop">
-
+        
+        
             <!-- revolution slider begin -->
-            <div class="fullwidthbanner-container" style="padding: 5% 0;">
+            <div class="fullwidthbanner-container webcnt" style="padding: 5% 0;">
                 <div id="revolution-slider">
                     <div class="_row content_">
                         <div class="col-md-6 col-sm-6"></div>
@@ -127,21 +121,20 @@
                 </div>
             </div>
             <!-- revolution slider close -->
-
-            <div class="vid_dsk">
-              <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" id="vdsk" 
-              poster="images/Gabrielle-essence.png">
-                  <source src="video/1280x720_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
+            
+            <div class="vid_dsk webcnt">
+              <video id="vdsk" autoplay="autoplay" loop="loop" autobuffer="autobuffer" 
+              poster="images/snap_h.png">
+                  <source id="gabvid" src="video/1280x720_POS_GABRIELLE-LESSENCE.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="vid_mob">
-              <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" id="vmob" 
-              poster="images/Gabrielle-essence.png">
-                  <source src="video/720x1280_TEH__GABRIELLE-LESSENCE.mp4" type="video/mp4">
+            <div class="vid_mob webcnt">
+              <video id="vmob" autoplay="autoplay" loop="loop" autobuffer="autobuffer" 
+              poster="images/snap_h.png">
+                  <source id="gabvid" src="video/720x1280_TEH__GABRIELLE-LESSENCE.mp4" type="video/mp4">
               </video>
             </div>
 
-        </div>
 
         <section class="iostop container--full">
             <div class="_row content_">
@@ -221,7 +214,6 @@
         </section>
         <!-- /.Descripción Chanel Gabrielle -->
 
-
         <!-- Modal -->
         <div class="modal bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div id="mygab" class="modal-dialog modal-lg" role="document">
@@ -277,9 +269,12 @@
         <!-- /.Modal -->
 
     </div>
-    
+
+
+    <script src="js/videojs-resolution-switcher.js"></script>
     <script src="js/universal-parallax.min.js"></script>
     <script>
+        videojs('gabrielle_video').videoJsResolutionSwitcher();
         new universalParallax().init({
             speed: 4
         });
@@ -287,12 +282,15 @@
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
         if( iOS ){
-            $("#hometop").remove();
+            var imageUrl = "images/gabrielle.gif";
+            $(".webcnt").remove();
+            $('.bgmain').css('background-image', 'url(' + imageUrl + ')');
             //$(".iostop").css('display','block');
         }else{
             //$("#hometop").css('display','block');
             $(".iostop").remove();
         }
     </script>
+    
 </body>
 </html>

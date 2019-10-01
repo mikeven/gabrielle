@@ -51,14 +51,16 @@ $(document).ready(function () {
     });
     
     if ( $(window).width() < 992 ) {
-        // Mobile video
-        $("#vdsk").get(0).pause();
-        $("#vmob").get(0).play();
+        var video = $("#vdsk").get(0);
+        video.pause();
+        var video2 = $("#vmob").get(0);
+        video2.play();
     }
-    else if ( $(window).width() > 992 ) {
-        // Desktop video
-        $("#vmob").get(0).pause();
-        $("#vdsk").get(0).play();
+    else {
+        var video = $("#vdsk").get(0);
+        video.play();
+        var video2 = $("#vmob").get(0);
+        video2.pause();
     }
 
     $(".envelope").click( function (){
