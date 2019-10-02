@@ -49,16 +49,19 @@ $(document).ready(function () {
         }
 
     });
+
+    if ( ( $("#vdsk").length > 0 ) && ( $("#vdsk").length > 0 ) ){
     
-    if ( $(window).width() < 992 ) {
-        // Mobile video
-        $("#vdsk").get(0).pause();
-        $("#vmob").get(0).play();
-    }
-    else if ( $(window).width() > 992 ) {
-        // Desktop video
-        $("#vmob").get(0).pause();
-        $("#vdsk").get(0).play();
+        if ( $(window).width() < 992 ) {
+            // Mobile video
+            $("#vdsk").get(0).pause();
+            $("#vmob").get(0).play();
+        }
+        else if ( $(window).width() > 992 ) {
+            // Desktop video
+            $("#vmob").get(0).pause();
+            $("#vdsk").get(0).play();
+        }
     }
 
     $(".envelope").click( function (){
