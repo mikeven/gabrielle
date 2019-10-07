@@ -75,6 +75,23 @@ $(document).ready(function () {
         }
     });
 
+    $("form#envio_foto").submit(function(e) {
+        e.preventDefault();    
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: "../gabrielle.php",
+            type: 'POST',
+            data: formData,
+            success: function (data) {
+                alert(data)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
     function envOut(tween){
         // Foto hacia abajo para salir del sobre
         $( "#foto" ).css( "z-index", 4 );
