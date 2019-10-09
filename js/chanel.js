@@ -75,8 +75,11 @@ $(document).ready(function () {
         }
     });
 
+    /* ============================================ */
+
     $("form#envio_foto").submit(function(e) {
-        e.preventDefault();    
+        e.preventDefault();  
+
         var formData = new FormData(this);
 
         $.ajax({
@@ -84,13 +87,16 @@ $(document).ready(function () {
             type: 'POST',
             data: formData,
             success: function (data) {
-                alert(data)
+                console.log(data);
+                alert(data);
             },
             cache: false,
             contentType: false,
             processData: false
         });
     });
+
+    /* ============================================ */
 
     function envOut(tween){
         // Foto hacia abajo para salir del sobre
