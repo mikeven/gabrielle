@@ -10,7 +10,7 @@
     $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
     $cabeceras .= "From: Gabrielle Essence <gabrielleessence@cupfsa.com>";
 
-    $contenido = file_get_contents( "photos/gabrielle.html" );
+    $contenido = file_get_contents( "photos/mailing.html" );
     $contenido = str_replace( "{codigo}", $codigo, $contenido );
     $contenido = str_replace( "{nombre}", $nombre, $contenido );
 
