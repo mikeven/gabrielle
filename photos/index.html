@@ -49,17 +49,7 @@
         var urltext = encodeURIComponent( socialtx );
     </script>
     <style type="text/css">
-        #foto{
-            top: 14px;
-            left: 15px;
-            width: 270px;
-            height: 270px;
-            z-index: 2;
-            position: absolute;
-            overflow: hidden;
-            background: url( images/chanel-woman.jpg );
-            background-size: cover;
-        }
+        .aleft{ text-align: left; }
 
         .container--full {
             width: 100%;
@@ -110,16 +100,16 @@
                         onSubmit="return false">
                             
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="codigo">Código</label>
+                                <label class="col-md-3 control-label aleft" for="codigo">Código</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" id="codigo" name="codigo" readonly value="GA02513">
                                 </div>
                             </div>
         
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="foto">Foto</label>
+                                <label class="col-md-3 control-label aleft" for="foto">Foto</label>
                                 <div class="col-md-9">
-                                    <input type="file" name="foto" class="form-control">
+                                    <input type="file" name="foto" class="form-control" required>
                                 </div>
                             </div>
 
