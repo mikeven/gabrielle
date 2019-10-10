@@ -86,9 +86,11 @@ $(document).ready(function () {
             url: "../gabrielle.php",
             type: 'POST',
             data: formData,
-            success: function (data) {
-                console.log(data);
-                alert(data);
+            beforeSend: function () {
+                $("#enviar_img").fadeOut();
+            },
+            success: function ( data ) {
+                $("#envio_exito").fadeIn();  
             },
             cache: false,
             contentType: false,

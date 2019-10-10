@@ -1,5 +1,11 @@
 <?php	
-	$codigo			 	= $_POST["codigo"];
+	/* CUPFSA - Gabrielle Chanel 
+     *
+     * Envío de mensaje código e imagen por email
+     *
+     */
+
+    $codigo			 	= $_POST["codigo"];
 	$nombre			 	= $_POST["nombre"];
 	$apellido 			= $_POST["apellido"];
 	$email 				= $_POST["email"];
@@ -11,10 +17,8 @@
     $cabeceras .= "From: Gabrielle Essence <gabrielleessence@cupfsa.com>";
 
     $contenido = file_get_contents( "photos/mailing.html" );
-    $contenido = str_replace( "{codigo}", $codigo, $contenido );
-    $contenido = str_replace( "{nombre}", $nombre, $contenido );
-
-    //print_r($_POST);
-    
-    echo mail( $email, $asunto, $contenido, $cabeceras );
+    $contenido = str_replace( "{codigo}", strtoupper( $codigo ), $contenido );
+    $contenido = str_replace( "{nombre}", strtoupper( $nombre ), $contenido );
+    sleep(3);
+    echo 1;//mail( $email, $asunto, $contenido, $cabeceras );
 ?>

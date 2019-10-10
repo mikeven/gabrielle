@@ -56,6 +56,10 @@
             height: 100vh;
         }
 
+        #envio_exito{ display:none; color: #b98c3e; }
+        #envio_exito a { color: #000; }
+        #envio_exito a:hover { color: #b98c3e; }
+
         .social_inv p{
           font-size: 10px; padding:10px 0; 
         }
@@ -145,7 +149,14 @@
                             
                         
                             <div class="form-group" style="padding: 40px" align="center">
-                              <button type="submit" class="btn-white bounce-green" id="btn_submit" data-toggle="modal" data-target="#exampleModal"> Enviar</button>
+                              <button id="enviar_img" type="submit" class="btn-white bounce-green"> Enviar</button>
+                            </div>
+
+                            <div id="envio_exito" align="center">
+                                <span>La imagen fue enviada</span>
+                                <div>
+                                    <a href="https://gabrielleessence.cupfsa.com/photos/">Volver</a>
+                                </div>
                             </div>
                     
                         </form>
