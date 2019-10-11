@@ -90,6 +90,8 @@ $(document).ready(function () {
                 $("#enviar_img").fadeOut();
             },
             success: function ( data ) {
+                console.log( data );
+                $("#envio_foto")[0].reset();
                 $("#envio_exito").fadeIn();  
             },
             cache: false,

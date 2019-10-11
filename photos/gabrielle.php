@@ -19,6 +19,6 @@
     $contenido = file_get_contents( "photos/mailing.html" );
     $contenido = str_replace( "{codigo}", strtoupper( $codigo ), $contenido );
     $contenido = str_replace( "{nombre}", strtoupper( $nombre ), $contenido );
-    sleep(3);
-    echo 1;//mail( $email, $asunto, $contenido, $cabeceras );
+    
+    mail( $email, $asunto, $contenido, $cabeceras );
 ?>
