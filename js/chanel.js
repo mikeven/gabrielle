@@ -30,7 +30,6 @@ $(document).ready(function () {
         $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
     });
     
-
     $("video").prop( 'muted', true );
 
     $("#mute-video").click( function (){
@@ -75,6 +74,10 @@ $(document).ready(function () {
         }
     });
 
+    $(".verdisclaimer").click( function (){
+        $("#disclaimer").fadeToggle( 500 );
+    });
+
     /* ============================================ */
 
     $("form#envio_foto").submit(function(e) {
@@ -90,9 +93,9 @@ $(document).ready(function () {
                 $("#enviar_img").fadeOut();
             },
             success: function ( data ) {
-                console.log( data );
+                console.log(data);
                 $("#envio_foto")[0].reset();
-                $("#envio_exito").fadeIn();  
+                $("#envio_exito").fadeIn();
             },
             cache: false,
             contentType: false,
