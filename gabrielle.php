@@ -19,7 +19,7 @@
         // Registro en bd de los datos del participante
         $q = "insert into participante ( nombre, apellido, codigo, email, locacion, 
         imagen, fecha ) values ( '$p[nombre]', '$p[apellido]', '$p[codigo]', '$p[email]', 
-        '$p[locacion]', '$p[foto]', NOW() )";
+        '$p[locacion]', '$p[imagen]', NOW() )";
         
         $data = mysqli_query( $dbh, $q );
         return mysqli_insert_id( $dbh );
@@ -61,12 +61,11 @@
     /*-------------------------------------------------------------------*/
 
     $data["imagen"] = guardarArchivoImagen( $_FILES, $data );
-    print_r($data);
 
     /*-------------------------------------------------------------------*/
 
-    /*include( "database/bd.php" );
-    guardarParticipante( $dbh, $data );*/
+    include( "database/bd.php" );
+    guardarParticipante( $dbh, $data );
 
     /*-------------------------------------------------------------------*/
 

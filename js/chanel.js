@@ -78,6 +78,20 @@ $(document).ready(function () {
         $("#disclaimer").fadeToggle( 500 );
     });
 
+    
+
+    function envOut(tween){
+        // Foto hacia abajo para salir del sobre
+        $( "#foto" ).css( "z-index", 4 );
+        TweenMax.staggerTo( "#foto", 2, { y:0, ease: Back.easeInOut }, 2 );
+        $("#stenv").val("open");
+    }
+    function envIn(tween){
+        // Foto hacia abajo para entrar al sobre
+        TweenMax.staggerTo( "#foto", 0.85, { y:0, zIndex:2, ease: Expo.easeInOut }, 1 );
+        $("#stenv").val("closed");
+    }
+
     /* ============================================ */
 
     $("form#envio_foto").submit(function(e) {
@@ -90,7 +104,7 @@ $(document).ready(function () {
             type: 'POST',
             data: formData,
             beforeSend: function () {
-                $("#enviar_img").fadeOut();
+                $("#envio_foto").fadeOut();
             },
             success: function ( data ) {
                 console.log(data);
@@ -105,16 +119,30 @@ $(document).ready(function () {
 
     /* ============================================ */
 
-    function envOut(tween){
-        // Foto hacia abajo para salir del sobre
-        $( "#foto" ).css( "z-index", 4 );
-        TweenMax.staggerTo( "#foto", 2, { y:0, ease: Back.easeInOut }, 2 );
-        $("#stenv").val("open");
-    }
-    function envIn(tween){
-        // Foto hacia abajo para entrar al sobre
-        TweenMax.staggerTo( "#foto", 0.85, { y:0, zIndex:2, ease: Expo.easeInOut }, 1 );
-        $("#stenv").val("closed");
-    }
+    $("#descubrirfoto").submit(function(e) {
+        e.preventDefault();  
+
+        var formData = new FormData(this);
+        $.ajax({
+            url: "dataphotos.php",
+            type: 'POST',
+            data: formData,
+            beforeSend: function (){ },
+            success: function ( data ) {
+                res = jQuery.parseJSON( data );
+                if( res.exito == 1 ){
+                    var url = "index.php?codigo=" + res.reg.codigo;
+                    window.location = url;
+                }
+                else{
+                    $("#go_modal").click();
+                    //$("#response").html( res.mje );*/
+                }
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
     
 });
