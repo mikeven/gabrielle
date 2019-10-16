@@ -6,11 +6,14 @@
      */
 
     $locacion = "";
+    include( "disclaimer.php" );
+
     if( isset( $_GET["loc"] ) ){
         $locaciones = array( "chi" => "Parque Arauco Plaza - Los Cristales", 
                              "par" => "Shopping El Sol - Plaza Central" 
                     ); 
         $locacion = $locaciones[ $_GET["loc"] ];
+        $terminos = $disclaimer[ $_GET["loc"] ];
     }
 ?>
 <!DOCTYPE html>
@@ -182,7 +185,7 @@
 
                             
                             <div id="disclaimer">
-                                <p>De conformidad con la Ley Nº 18.331, de Protección de Datos Personales y Acción de Habeas Data, de 11 de agosto de 2008, los datos suministrados a partir del 17 de diciembre quedarán incorporados en la Base de Datos “Clientes Chanel”, la cual será procesada exclusivamente para agendar su cita en el COCO BEAUTY CLUB. Esos datos se recogerán a través de medios legítimos y sólo serán los imprescindibles para poder prestar el servicio requerido. Los datos personales serán tratados con el grado de protección adecuado, tomándose las medidas de seguridad necesarias para evitar su alteración, pérdida, tratamiento o acceso no autorizado por parte de terceros. El responsable de la Base de Datos es (Bylasol S.A.) y la dirección donde el titular podrá ejercer los derechos de acceso, rectificación, actualización, inclusión o supresión es Ruta 101 Km 26.200, Canelones".</p>
+                                <p><?php echo $terminos;?></p>
                             </div>
                         
                             <div class="form-group" style="padding: 40px" align="center">
