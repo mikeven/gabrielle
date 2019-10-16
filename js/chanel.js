@@ -95,6 +95,7 @@ $(document).ready(function () {
     /* ============================================ */
 
     $("form#envio_foto").submit(function(e) {
+        // Envío de formulario con datos de participantes
         e.preventDefault();  
 
         var formData = new FormData(this);
@@ -105,9 +106,15 @@ $(document).ready(function () {
             data: formData,
             beforeSend: function () {
                 $("#envio_foto").fadeOut();
+                $("#waitresponse").fadeIn();
             },
             success: function ( data ) {
                 console.log(data);
+                res = jQuery.parseJSON( data );
+                $("#phcode").html( res.codigo );
+                $("#showcode").click();
+
+                $("#waitresponse").fadeOut();
                 $("#envio_foto")[0].reset();
                 $("#envio_exito").fadeIn();
             },

@@ -79,7 +79,9 @@
 
     $asunto    = "Descubra su foto";
 
-    echo mail( $data["email"], $asunto, $contenido, $cabeceras );
+    mail( $data["email"], $asunto, $contenido, $cabeceras );
+
+    echo json_encode( $data );
 
     /*-------------------------------------------------------------------*/
 ?>

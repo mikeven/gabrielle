@@ -93,7 +93,7 @@
             text-align: left !important;
         }
 
-        #disclaimer ,#waitresponse{ display: none; }
+        #disclaimer{ display: none; }
         #disclaimer p { line-height: 1.6em; font-size: 12px; text-align: center; }
 
         #envio_foto input[type=text], #envio_foto input[type=email]{
@@ -136,9 +136,6 @@
                     <div class="col-md-3 col-xs-12 col-sm-12"></div>
                     <div class="col-md-6 col-xs-12 col-sm-12">
                         <div align="center" style="padding: 15px 0"><label class="control-label"><?php echo $locacion; ?></label></div>
-                        <div id="waitresponse" align="center">
-                            <img src="../images/gabrielle_wait.gif">
-                        </div>
                         <form class="form-horizontal form-bordered" id="envio_foto" onSubmit="return false">
                             
                             <input type="hidden" name="locacion" value="<?php echo $locacion; ?>">
@@ -192,7 +189,7 @@
                         
                         <div id="envio_exito" align="center">
                             <span>Mensaje enviado con éxito</span>
-                            <div style="padding: 40px 0">
+                            <div style="padding: 20px"> 
                                 <a href="javascript:history.go(0)">Volver</a>
                             </div>
                         </div>
