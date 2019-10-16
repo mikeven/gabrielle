@@ -1,0 +1,7 @@
+<?php 
+	$disclaimer = array(
+		"chi" => "De conformidad con la Ley Nº 19.628, sobre protección de la vida privada, los datos suministrados serán procesados exclusivamente para subir su foto en el sitio web de GABRIELLE CHANEL ESSENCE. Utilizaremos su email únicamente para enviarle el vínculo en el que podrá ver su foto, descargarla y compartirla hasta por un término de tres (3) días.  Los datos han sido obtenidos a través de medios legítimos y sólo serán los imprescindibles para poder prestar el servicio requerido. Los datos personales serán tratados con el grado de protección adecuado, tomándose las medidas de seguridad necesarias para evitar su alteración, pérdida, tratamiento o acceso no autorizado por parte de terceros.",
+
+		"par" => "De conformidad con la Ley de protección de datos personales y protección de la vida privada, los datos suministrados serán procesados exclusivamente para subir su foto en el sitio web de GABRIELLE CHANEL ESSENCE. Utilizaremos su email únicamente para enviarle el vínculo en el que podrá ver su foto, descargarla y compartirla hasta por un término de tres (3) días.  Los datos han sido obtenidos a través de medios legítimos y sólo serán los imprescindibles para poder prestar el servicio requerido. Los datos personales serán tratados con el grado de protección adecuado, tomándose las medidas de seguridad necesarias para evitar su alteración, pérdida, tratamiento o acceso no autorizado por parte de terceros."
+	);
+?>
