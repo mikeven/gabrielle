@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gabrielle Chanel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gabrielle. La esencia de una mujer">
+    <meta name="keywords" content="Gabrielle,Chanel,esencia,mujer">
+    <meta name="author" content="">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Chanel">
+    <meta name="twitter:creator" content="@Chanel">
+    <meta name="twitter:title" content="GABRIELLE CHANEL">
+    <meta name="twitter:description" content="Hoy conocí Gabrielle CHANEL Essence en {{locacion}}. GABRIELLE. La esencia de una mujer">
+    <meta name="twitter:image" content="{{url_img}}">
+
+    <meta property="fb:app_id"        content="696275317540816"/>
+    <meta property="og:type"          content="website"/>
+    <meta property="og:title"         content="GABRIELLE CHANEL"/>
+    <meta property="og:url"           content="{{url}}"/>
+    <meta property="og:description"   content="Hoy conocí Gabrielle CHANEL Essence en {{locacion}}. GABRIELLE. La esencia de una mujer"/>
+    <meta property="og:image"         content="{{url_img}}"/>
+
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/gabrielle.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" >
+    <link rel="stylesheet" href="../css/all.css" type="text/css">
+    <link rel="stylesheet" href="../css/universal-parallax.min.css" type="text/css">
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.isotope.min.js"></script>
+    <script src="../js/jquery.prettyPhoto.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="../js/chanel.js"></script>
+
+
+    <style type="text/css">
+        #foto{
+            top: 14px;
+            left: 15px;
+            width: 270px;
+            height: 270px;
+            z-index: 2;
+            position: absolute;
+            overflow: hidden;
+            background: url( {{url_img_css}} );
+            background-size: cover;
+        }
+        .social_inv p {
+            font-size: 10px;
+            padding: 10px 0;
+        }
+    </style>
+    
+    
+</head>
+
+<body id="homepage">
+
+    <div id="wrapper">
+        
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
+
+            <!-- Hashtags and social account -->
+            <section id="socialkeys" class="bg-id-color" data-speed="8" data-type="background">
+                <div class="container">
+                    <div class="row" align="center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+
+                            <div align="center" style="padding: 5px 0">
+                              <span class="social_inv">Clic en el sobre para ver tu foto</span>
+                            </div>
+                            <div class="envelope" style="margin-top: 20px;">
+                              <input id="openenv" class="envelope__check" type="checkbox"/>
+                              <input id="stenv" type="hidden"/ value="closed">
+                              <div class="envelope__flap envelope__flap--inside"></div>
+                              <div class="envelope__flap"></div>
+                                <div id="foto"></div>
+                              <div class="envelope__back"></div>
+                            </div>
+                            
+                            <div class="social_inv">
+                              <p>GABRIELLE. La Esencia de una mujer</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.Hashtags and social account -->
+
+        </div>
+        <!-- content close -->
+
+    </div>   
+    
+</body>
+</html>

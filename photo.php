@@ -9,19 +9,20 @@
 
     $data = obtenerFotoPorDefecto( $dbh );
     $foto = $data["imagen"];
-    $locacion   = "sin locación";
+    $locacion   = "XXX";
     $codigo     = "AAA000";
     if( isset( $_GET["codigo"] ) ){
-        $codigo = $_GET["codigo"];
-        $data = obtenerFoto( $dbh, $codigo );
+        
+        $data       = obtenerFoto( $dbh, $_GET["codigo"] );
         $foto       = $data["imagen"];
         $locacion   = $data["locacion"];
         $codigo     = $data["codigo"];
     }
-    $url = urlencode( "https://gabrielleessence.cupfsa.com/photo.php?codigo=<?php echo $codigo; ?>" );
-    echo $locacion."<br>";
-    echo "https://gabrielleessence.cupfsa.com/uploads/$foto";
-
+    var_dump($data);
+    $url = "https://gabrielleessence.cupfsa.com/index.php?codigo=$codigo";
+    $url_enc = urlencode( $url );
+    $ogdescription = "Hoy conocí Gabrielle CHANEL Essence en $locacion. GABRIELLE. La esencia de una mujer";
+    $ogimage = "https://gabrielleessence.cupfsa.com/uploads/$foto";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gabrielle. La esencia de una mujer">
     <meta name="keywords" content="Gabrielle,Chanel,esencia,mujer">
-    
+    <meta name="author" content="">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Chanel">
@@ -39,13 +40,13 @@
     <meta name="twitter:title" content="GABRIELLE CHANEL">
     <meta name="twitter:description" content="Hoy conocí Gabrielle CHANEL Essence en <?php echo $locacion; ?>. GABRIELLE. La esencia de una mujer">
     <meta name="twitter:image" content="https://gabrielleessence.cupfsa.com/uploads/<?php echo $foto; ?>">
-    
+
     <meta property="fb:app_id"        content="696275317540816"/>
-    <meta property="og:url"           content="<?php echo $url; ?>"/>
     <meta property="og:type"          content="website"/>
     <meta property="og:title"         content="GABRIELLE CHANEL"/>
-    <meta property="og:description"   content="Hoy conocí Gabrielle CHANEL Essence en <?php echo $locacion; ?>. GABRIELLE. La esencia de una mujer"/>
-    <meta property="og:image"         content="https://gabrielleessence.cupfsa.com/uploads/<?php echo $foto; ?>"/>
+    <meta property="og:url"           content="<?php echo $url; ?>"/>
+    <meta property="og:description"   content="<?php echo $ogdescription; ?>"/>
+    <meta property="og:image"         content="<?php echo $ogimage; ?>"/>
 
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>

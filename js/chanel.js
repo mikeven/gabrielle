@@ -136,12 +136,21 @@ $(document).ready(function () {
             data: formData,
             beforeSend: function (){ },
             success: function ( data ) {
+                console.log(data);
                 res = jQuery.parseJSON( data );
                 if( res.exito == 1 ){
                     var url = "index.php?codigo=" + res.reg.codigo;
-                    window.location = url;
+                    var imgfoto = "https://gabrielleessence.cupfsa.com/uploads/" + res.reg.imagen;
+                    
+                    $('#foto').css( "background-image", "url(" + imgfoto + ")" ); 
+                    $("#lnksharetw").attr( "href", "" + res.lnktw + "" );
+                    $("#lnksharefb").attr( "href", "" + res.lnkfb + "" );
+                   
+                    $("#go_modal").click();
                 }
                 else{
+                    var imgfoto = "https://gabrielleessence.cupfsa.com/images/chanel-woman.jpg";
+                    $('#foto').css( "background-image", "url(" + imgfoto + ")" );
                     $("#go_modal").click();
                     //$("#response").html( res.mje );*/
                 }

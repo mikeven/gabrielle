@@ -9,16 +9,20 @@
 
     $data = obtenerFotoPorDefecto( $dbh );
     $foto = $data["imagen"];
-    $locacion   = "sin locación";
+    $locacion   = "XXX";
     $codigo     = "AAA000";
     if( isset( $_GET["codigo"] ) ){
-        $codigo = $_GET["codigo"];
-        $data = obtenerFoto( $dbh, $codigo );
+        
+        $data       = obtenerFoto( $dbh, $_GET["codigo"] );
         $foto       = $data["imagen"];
         $locacion   = $data["locacion"];
         $codigo     = $data["codigo"];
     }
-    $url = urlencode( "https://gabrielleessence.cupfsa.com/index.php?codigo=<?php echo $codigo; ?>" );
+    
+    $url = "https://gabrielleessence.cupfsa.com/index.php?codigo=$codigo";
+    $url_enc = urlencode( $url );
+    $ogdescription = "Hoy conocí Gabrielle CHANEL Essence en $locacion. GABRIELLE. La esencia de una mujer";
+    $ogimage = "https://gabrielleessence.cupfsa.com/uploads/$foto";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,18 +34,19 @@
     <meta name="keywords" content="Gabrielle,Chanel,esencia,mujer">
     <meta name="author" content="">
 
-    <meta name="twitter:card" content="summary_large_image">
+    <!--<meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Chanel">
     <meta name="twitter:creator" content="@Chanel">
     <meta name="twitter:title" content="GABRIELLE CHANEL">
-    <meta name="twitter:description" content="Hoy conocí Gabrielle CHANEL Essence en <?php echo $locacion; ?>. GABRIELLE. La esencia de una mujer">
-    <meta name="twitter:image" content="https://gabrielleessence.cupfsa.com/uploads/<?php echo $foto; ?>">
+    <meta name="twitter:description" content="Hoy conocí Gabrielle CHANEL Essence en <?php //echo $locacion; ?>. GABRIELLE. La esencia de una mujer">
+    <meta name="twitter:image" content="https://gabrielleessence.cupfsa.com/uploads/<?php //echo $foto; ?>">
 
-    <meta property="og:url"           content="<?php echo $url; ?>"/>
+    <meta property="fb:app_id"        content="696275317540816"/>
     <meta property="og:type"          content="website"/>
     <meta property="og:title"         content="GABRIELLE CHANEL"/>
-    <meta property="og:description"   content="Hoy conocí Gabrielle CHANEL Essence en <?php echo $locacion; ?>. GABRIELLE. La esencia de una mujer"/>
-    <meta property="og:image"         content="https://gabrielleessence.cupfsa.com/uploads/<?php echo $foto; ?>"/>
+    <meta property="og:url"           content="<?php //echo $url; ?>"/>
+    <meta property="og:description"   content="<?php //echo $ogdescription; ?>"/>
+    <meta property="og:image"         content="<?php //echo $ogimage; ?>"/>-->
 
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
@@ -197,7 +202,7 @@
                       
                             <label>Ingrese código</label>
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                              <input type="text" class="form-control codeinput" name="code" id="code" >
+                              <input type="text" class="form-control codeinput" name="code" id="code">
                             </div>
                         
                             <div class="col-xs-12 col-md-12" style="padding: 15px">
@@ -253,18 +258,18 @@
 
                 <ul id="foto-acciones">
                     <li>
-                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" title="Compartir en facebook">
+                        <a id="lnksharefb" target="_blank" href="" class="fb-xfbml-parse-ignore" title="Compartir en facebook">
                         <i class="fab fa-2x fa-facebook-square"></i></a>
                     </li>
                     <li><!-- &hashtags=GABRIELLECHANEL -->
-                        <a href="https://twitter.com/intent/tweet?url=<?php echo $url; ?>&text=Hoy%20conocí%20Gabrielle%20CHANEL%20Essence%20en%20<?php echo $locacion; ?>.%20GABRIELLE.%20La%20esencia%20de%20una%20mujer" data-text="Gabrielle Chanel" 
+                        <a id="lnksharetw" href="" data-text="Gabrielle Chanel" 
                         data-url="<?php echo $url; ?>" data-hashtags="GABRIELLECHANEL" data-lang="es" 
                         title="Compartir en twitter"><i class="fab fa-2x fa-twitter-square"></i>
                         </a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </li>
                     <li>
-                        <a href="mailto:mikeven@gmail.com?subject=Gabrielle%20Chanel&amp;body=Hoy%20conocí%20Gabrielle%20CHANEL%20Essence%20en%20<?php echo $locacion; ?>.GABRIELLE.%20La%20esencia%20de%20una%20mujer%20<?php echo $url; ?>" title="Enviar por email"><i class="fas fa-2x fa-envelope-square"></i></a>
+                        <a href="mailto:mikeven@gmail.com?subject=Gabrielle%20Chanel&amp;body=Hoy%20conocí%20Gabrielle%20CHANEL%20Essence%20en%20<?php echo $locacion; ?>.GABRIELLE.%20La%20esencia%20de%20una%20mujer%20<?php echo $url_enc; ?>" title="Enviar por email"><i class="fas fa-2x fa-envelope-square"></i></a>
                     </li>
                     <li>
                         <a href="uploads/<?php echo $foto; ?>" title="Descargar" download><i class="fas fa-2x fa-arrow-circle-down"></i></a>
