@@ -145,14 +145,13 @@ $(document).ready(function () {
                     $('#foto').css( "background-image", "url(" + imgfoto + ")" ); 
                     $("#lnksharetw").attr( "href", "" + res.lnktw + "" );
                     $("#lnksharefb").attr( "href", "" + res.lnkfb + "" );
+                    $("#lnkmail").attr( "href", "" + res.lnkmail + "" );
+                    $("#lnkimg").attr( "href", "" + imgfoto + "" );
                    
                     $("#go_modal").click();
                 }
                 else{
-                    var imgfoto = "https://gabrielleessence.cupfsa.com/images/chanel-woman.jpg";
-                    $('#foto').css( "background-image", "url(" + imgfoto + ")" );
-                    $("#go_modal").click();
-                    //$("#response").html( res.mje );*/
+                    $("#response").html( res.mje );
                 }
             },
             cache: false,

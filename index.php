@@ -1,29 +1,3 @@
-<?php   
-    /* Gabrielle Chanel - Foto de participante 
-     *
-     * Obtención de la imagen de participante para compartir
-     *
-     */
-    include( "database/bd.php" );
-    include( "dataphotos.php" );
-
-    $data = obtenerFotoPorDefecto( $dbh );
-    $foto = $data["imagen"];
-    $locacion   = "XXX";
-    $codigo     = "AAA000";
-    if( isset( $_GET["codigo"] ) ){
-        
-        $data       = obtenerFoto( $dbh, $_GET["codigo"] );
-        $foto       = $data["imagen"];
-        $locacion   = $data["locacion"];
-        $codigo     = $data["codigo"];
-    }
-    
-    $url = "https://gabrielleessence.cupfsa.com/index.php?codigo=$codigo";
-    $url_enc = urlencode( $url );
-    $ogdescription = "Hoy conocí Gabrielle CHANEL Essence en $locacion. GABRIELLE. La esencia de una mujer";
-    $ogimage = "https://gabrielleessence.cupfsa.com/uploads/$foto";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,7 +72,12 @@
             position: absolute;
             overflow: hidden;
             background: url( uploads/<?php echo $foto; ?> );
-            background-size: cover;
+            
+            background-size: contain;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-color: #FFF;
         }
 
         .container--full {
@@ -113,7 +92,7 @@
         ul#foto-acciones li {
           display:inline;
         }
-
+        #code{ text-align: center; }
         #foto-acciones a, .lnkchanel a{ color: #b98c3e }
         #foto-acciones a:hover, .lnkchanel a:hover{ color: #f0c06b }
        
@@ -264,15 +243,14 @@
                     <li><!-- &hashtags=GABRIELLECHANEL -->
                         <a id="lnksharetw" href="" data-text="Gabrielle Chanel" 
                         data-url="<?php echo $url; ?>" data-hashtags="GABRIELLECHANEL" data-lang="es" 
-                        title="Compartir en twitter"><i class="fab fa-2x fa-twitter-square"></i>
-                        </a>
+                        title="Compartir en twitter"><i class="fab fa-2x fa-twitter-square"></i></a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </li>
                     <li>
-                        <a href="mailto:mikeven@gmail.com?subject=Gabrielle%20Chanel&amp;body=Hoy%20conocí%20Gabrielle%20CHANEL%20Essence%20en%20<?php echo $locacion; ?>.GABRIELLE.%20La%20esencia%20de%20una%20mujer%20<?php echo $url_enc; ?>" title="Enviar por email"><i class="fas fa-2x fa-envelope-square"></i></a>
+                        <a id="lnkmail" href="" title="Enviar por email" tooltip><i class="fas fa-2x fa-envelope-square"></i></a>
                     </li>
                     <li>
-                        <a href="uploads/<?php echo $foto; ?>" title="Descargar" download><i class="fas fa-2x fa-arrow-circle-down"></i></a>
+                        <a id="lnkimg" href="uploads/<?php echo $foto; ?>" title="Descargar" download><i class="fas fa-2x fa-arrow-circle-down"></i></a>
                     </li>
                 </ul>
                 
@@ -311,6 +289,22 @@
             //$("#hometop").css('display','block');
             $(".iostop").remove();
         }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118040064-1"></script>
+    <script>
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('js', new Date());
+
+     
+
+      gtag('config', 'UA-118040064-1');
+
     </script>
     
 </body>

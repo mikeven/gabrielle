@@ -20,7 +20,9 @@
     <meta property="og:title"         content="GABRIELLE CHANEL"/>
     <meta property="og:url"           content="{{url}}"/>
     <meta property="og:description"   content="Hoy conocí Gabrielle CHANEL Essence en {{locacion}}. GABRIELLE. La esencia de una mujer"/>
-    <meta property="og:image"         content="{{url_img}}"/>
+    <meta property="og:image"           content="{{url_img}}"/>
+    <meta property="og:image:width"     content="1200"/>
+    <meta property="og:image:height"    content="630"/>
 
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
@@ -55,7 +57,12 @@
             position: absolute;
             overflow: hidden;
             background: url( {{url_img_css}} );
-            background-size: cover;
+            
+            background-size: contain;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-color: #FFF;
         }
         .social_inv p {
             font-size: 10px;

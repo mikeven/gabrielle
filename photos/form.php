@@ -14,6 +14,8 @@
                     ); 
         $locacion = $locaciones[ $_GET["loc"] ];
         $terminos = $disclaimer[ $_GET["loc"] ];
+    }else{
+        
     }
 ?>
 <!DOCTYPE html>

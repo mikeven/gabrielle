@@ -18,8 +18,8 @@
     function guardarParticipante( $dbh, $p ){
         // Registro en bd de los datos del participante
         $q = "insert into participante ( nombre, apellido, codigo, email, locacion, 
-        imagen, fecha ) values ( '$p[nombre]', '$p[apellido]', '$p[codigo]', '$p[email]', 
-        '$p[locacion]', '$p[imagen]', NOW() )";
+        imagen, fecha, abierta ) values ( '$p[nombre]', '$p[apellido]', '$p[codigo]', '$p[email]', 
+        '$p[locacion]', '$p[imagen]', NOW(), 'NO' )";
         
         $data = mysqli_query( $dbh, $q );
         return mysqli_insert_id( $dbh );
@@ -29,7 +29,7 @@
         // Carga de imagen en servidor => obtención de nombre de archivo
         
         $uploads_dir = "uploads";
-        $nombreimg = $data["nombre"].$data["apellido"];
+        $nombreimg = trim( $data["nombre"].$data["apellido"] );
 
         $tmp_name   = $img["foto"]["tmp_name"];
         $file_name  = $img["foto"]["name"];
@@ -77,7 +77,7 @@
     $contenido = str_replace( "{codigo}", strtoupper( $data["codigo"] ), $contenido );
     $contenido = str_replace( "{nombre}", strtoupper( $data["nombre"] ), $contenido );
 
-    $asunto    = "Descubra su foto";
+    $asunto    = "Descubra su foto. Descubra GABRIELLE CHANEL ESSENCE";
 
     mail( $data["email"], $asunto, $contenido, $cabeceras );
 

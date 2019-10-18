@@ -1,3 +1,29 @@
+<?php   
+    /* Gabrielle Chanel - Foto de participante 
+     *
+     * Obtención de la imagen de participante para compartir
+     *
+     */
+    include( "database/bd.php" );
+    include( "dataphotos.php" );
+
+    $data = obtenerFotoPorDefecto( $dbh );
+    $foto = $data["imagen"];
+    $locacion   = "XXX";
+    $codigo     = "AAA000";
+    if( isset( $_GET["codigo"] ) ){
+        
+        $data       = obtenerFoto( $dbh, $_GET["codigo"] );
+        $foto       = $data["imagen"];
+        $locacion   = $data["locacion"];
+        $codigo     = $data["codigo"];
+    }
+    
+    $url = "https://gabrielleessence.cupfsa.com/index.php?codigo=$codigo";
+    $url_enc = urlencode( $url );
+    $ogdescription = "Hoy conocí Gabrielle CHANEL Essence en $locacion. GABRIELLE. La esencia de una mujer";
+    $ogimage = "https://gabrielleessence.cupfsa.com/uploads/$foto";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +34,19 @@
     <meta name="keywords" content="Gabrielle,Chanel,esencia,mujer">
     <meta name="author" content="">
 
-    <meta name="twitter:card" content="summary_large_image">
+    <!--<meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Chanel">
     <meta name="twitter:creator" content="@Chanel">
     <meta name="twitter:title" content="GABRIELLE CHANEL">
-    <meta name="twitter:description" content="Hoy conocí Gabrielle CHANEL Essence en xxx. GABRIELLE. La esencia de una mujer">
-    <meta name="twitter:image" content="https://gabrielleessence.cupfsa.com/images/chanel-woman.jpg">
+    <meta name="twitter:description" content="Hoy conocí Gabrielle CHANEL Essence en <?php //echo $locacion; ?>. GABRIELLE. La esencia de una mujer">
+    <meta name="twitter:image" content="https://gabrielleessence.cupfsa.com/uploads/<?php //echo $foto; ?>">
 
-    <meta property="og:url"           content="https://gabrielleessence.cupfsa.com"/>
+    <meta property="fb:app_id"        content="696275317540816"/>
     <meta property="og:type"          content="website"/>
     <meta property="og:title"         content="GABRIELLE CHANEL"/>
-    <meta property="og:description"   content="Hoy conocí Gabrielle CHANEL Essence en xxx. GABRIELLE. La esencia de una mujer"/>
-    <meta property="og:image"         content="https://gabrielleessence.cupfsa.com/images/chanel-woman.jpg"/>
+    <meta property="og:url"           content="<?php //echo $url; ?>"/>
+    <meta property="og:description"   content="<?php //echo $ogdescription; ?>"/>
+    <meta property="og:image"         content="<?php //echo $ogimage; ?>"/>-->
 
     <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
@@ -70,8 +97,13 @@
             z-index: 2;
             position: absolute;
             overflow: hidden;
-            background: url( images/chanel-woman.jpg );
-            background-size: cover;
+            background: url( uploads/<?php echo $foto; ?> );
+            
+            background-size: contain;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-color: #FFF;
         }
 
         .container--full {
@@ -86,7 +118,7 @@
         ul#foto-acciones li {
           display:inline;
         }
-
+        #code{ text-align: center; }
         #foto-acciones a, .lnkchanel a{ color: #b98c3e }
         #foto-acciones a:hover, .lnkchanel a:hover{ color: #f0c06b }
        
@@ -175,7 +207,7 @@
                       
                             <label>Ingrese código</label>
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                              <input type="text" class="form-control codeinput" name="code" id="code" >
+                              <input type="text" class="form-control codeinput" name="code" id="code">
                             </div>
                         
                             <div class="col-xs-12 col-md-12" style="padding: 15px">
@@ -231,20 +263,20 @@
 
                 <ul id="foto-acciones">
                     <li>
-                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgabrielleessence.cupfsa.com&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" title="Compartir en facebook">
+                        <a id="lnksharefb" target="_blank" href="" class="fb-xfbml-parse-ignore" title="Compartir en facebook">
                         <i class="fab fa-2x fa-facebook-square"></i></a>
                     </li>
                     <li><!-- &hashtags=GABRIELLECHANEL -->
-                        <a href="https://twitter.com/intent/tweet?url=https://gabrielleessence.cupfsa.com&text=Hoy%20conocí%20Gabrielle%20CHANEL%20Essence%20en%20xxx.%20GABRIELLE.%20La%20esencia%20de%20una%20mujer" data-text="Gabrielle Chanel" data-url="https://gabrielleessence.cupfsa.com" data-hashtags="GABRIELLECHANEL" data-lang="es" title="Compartir en twitter"><i class="fab fa-2x fa-twitter-square"></i></a>
+                        <a id="lnksharetw" href="" data-text="Gabrielle Chanel" 
+                        data-url="<?php echo $url; ?>" data-hashtags="GABRIELLECHANEL" data-lang="es" 
+                        title="Compartir en twitter"><i class="fab fa-2x fa-twitter-square"></i></a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </li>
                     <li>
-                        <a href="mailto:mikeven@gmail.com?subject=Gabrielle%20Chanel&amp;body=Hoy%20conocí%20Gabrielle%20CHANEL%20Essence%20en%20xxx.GABRIELLE.%20La%20esencia%20de%20una%20mujer%20https%3A%2F%2Fgabrielleessence.cupfsa.com&attachment=https://gabrielleessence.cupfsa.com/images/chanel-woman.jpg" title="Enviar por email"><i class="fas fa-2x fa-envelope-square"></i></a>
-                        
-                        <a href="mailto:example@tutorialspark.com?subject=Gabrielle Chanel&body=Hoy conocí Gabrielle https://gabrielleessence.cupfsa.com/shares/photoUIP219.html">-</a>
+                        <a id="lnkmail" href="" title="Enviar por email" tooltip><i class="fas fa-2x fa-envelope-square"></i></a>
                     </li>
                     <li>
-                        <a href="images/chanel-woman.jpg" title="Descargar" download><i class="fas fa-2x fa-arrow-circle-down"></i></a>
+                        <a id="lnkimg" href="uploads/<?php echo $foto; ?>" title="Descargar" download><i class="fas fa-2x fa-arrow-circle-down"></i></a>
                     </li>
                 </ul>
                 
@@ -283,6 +315,22 @@
             //$("#hometop").css('display','block');
             $(".iostop").remove();
         }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118040064-1"></script>
+    <script>
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('js', new Date());
+
+     
+
+      gtag('config', 'UA-118040064-1');
+
     </script>
     
 </body>
