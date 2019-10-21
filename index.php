@@ -185,7 +185,8 @@
                             </div>
                         
                             <div class="col-xs-12 col-md-12" style="padding: 15px">
-                              <button type="submit" class="btn-white bounce-green" id="btn_submit" > Enviar</button>
+                              <button type="submit" class="btn-white bounce-green" id="btn_submit" 
+                              onclick="gaClic('codigo_foto','Código_imagen');"> Enviar</button>
                             </div>
                             <a id="go_modal" href="#!" data-toggle="modal" data-target="#exampleModal"></a>
                     
@@ -237,20 +238,21 @@
 
                 <ul id="foto-acciones">
                     <li>
-                        <a id="lnksharefb" target="_blank" href="" class="fb-xfbml-parse-ignore" title="Compartir en facebook">
-                        <i class="fab fa-2x fa-facebook-square"></i></a>
+                        <a id="lnksharefb" target="_blank" href="" class="fb-xfbml-parse-ignore" title="Compartir en facebook" onclick="gaClic('fb_share','Compartir_en_facebook');"> <i class="fab fa-2x fa-facebook-square"></i></a>
                     </li>
                     <li><!-- &hashtags=GABRIELLECHANEL -->
                         <a id="lnksharetw" href="" data-text="Gabrielle Chanel" 
                         data-url="<?php echo $url; ?>" data-hashtags="GABRIELLECHANEL" data-lang="es" 
-                        title="Compartir en twitter"><i class="fab fa-2x fa-twitter-square"></i></a>
+                        title="Compartir en twitter" onclick="gaClic('tw_share','Compartir_en_twitter');"> 
+                        <i class="fab fa-2x fa-twitter-square"></i></a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </li>
                     <li>
-                        <a id="lnkmail" href="" title="Enviar por email" tooltip><i class="fas fa-2x fa-envelope-square"></i></a>
+                        <a id="lnkmail" href="" title="Enviar por email" onclick="gaClic('email_share','Enviar_por_email');"><i class="fas fa-2x fa-envelope-square"></i></a>
                     </li>
                     <li>
-                        <a id="lnkimg" href="uploads/<?php echo $foto; ?>" title="Descargar" download><i class="fas fa-2x fa-arrow-circle-down"></i></a>
+                        <a id="lnkimg" href="uploads/<?php echo $foto; ?>" title="Descargar" download 
+                            onclick="gaClic('descarga','Descarga_imagen');"><i class="fas fa-2x fa-arrow-circle-down"></i></a>
                     </li>
                 </ul>
                 
@@ -293,19 +295,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118040064-1"></script>
-    <script>
-
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag(){dataLayer.push(arguments);}
-
-      gtag('js', new Date());
-
-     
-
-      gtag('config', 'UA-118040064-1');
-
-    </script>
+    <script src="js/ga.js"> </script>
     
 </body>
 </html>
