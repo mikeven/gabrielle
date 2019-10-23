@@ -150,7 +150,7 @@ jQuery(document).ready(function() {
 	// --------------------------------------------------
 	// revolution slider
 	// --------------------------------------------------
-	var revapi;
+	/*var revapi;
 
   	revapi = jQuery('#revolution-slider').revolution({
 	delay:15000,
@@ -163,7 +163,7 @@ jQuery(document).ready(function() {
 	touchenabled:"on",
 	navigationType:"none",
 	dottedOverlay:"threexthree"
-	});
+	});*/
 
 					
 	// --------------------------------------------------

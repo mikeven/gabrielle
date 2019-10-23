@@ -29,7 +29,7 @@
         // Carga de imagen en servidor => obtención de nombre de archivo
         
         $uploads_dir = "uploads";
-        $nombreimg = trim( $data["nombre"].$data["apellido"] );
+        $nombreimg = str_replace(' ', '', $data["nombre"].$data["apellido"].$data["codigo"] );
 
         $tmp_name   = $img["foto"]["tmp_name"];
         $file_name  = $img["foto"]["name"];

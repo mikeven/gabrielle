@@ -14,8 +14,6 @@
                     ); 
         $locacion = $locaciones[ $_GET["loc"] ];
         $terminos = $disclaimer[ $_GET["loc"] ];
-    }else{
-        
     }
 ?>
 <!DOCTYPE html>
@@ -57,17 +55,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="../js/chanel.js"></script>
-
-
-    <!-- SLIDER REVOLUTION SCRIPTS  -->
-    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="js/rev-setting-1.js"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        var socialtx = 'Hoy conocí Gabrielle CHANEL Essence en xxx. La esencia de una mujer'
-        var urltext = encodeURIComponent( socialtx );
-    </script>
+    
     <style type="text/css">
         section { padding: 20px 0 20px 0 !important; }
         .aleft{ text-align: left; }
