@@ -233,7 +233,7 @@
                 </div>
                 
                 <div class="social_inv">
-                  <p>GABRIELLE. La Esencia de una mujer</p>
+                  <p>GABRIELLE CHANEL. La Esencia de una mujer</p>
                 </div>
 
                 <ul id="foto-acciones">

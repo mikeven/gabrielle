@@ -97,7 +97,7 @@
     </style>
 </head>
 
-<body id="homepage">
+<body id="homepage" style="background-image: #FFF;">
 
     <div id="wrapper">
         
