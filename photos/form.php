@@ -10,7 +10,7 @@
 
     if( isset( $_GET["loc"] ) ){
         $locaciones = array( "chi" => "Parque Arauco Plaza - Los Cristales", 
-                             "par" => "Shopping El Sol - Plaza Central" 
+                             "par" => "Paseo La Galería" 
                     ); 
         $locacion = $locaciones[ $_GET["loc"] ];
         $terminos = $disclaimer[ $_GET["loc"] ];
